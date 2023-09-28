@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b2qw703iw1dr3"]
+
+[ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="1_au4gh"]
+[ext_resource type="Texture2D" uid="uid://dfeqdueu6asgv" path="res://assets/textures/floors/wet_nomal.png" id="2_b3dl3"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_au4gh")
+metallic_specular = 0.56
+roughness = 0.38
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_b3dl3")
+refraction_enabled = true
+uv1_triplanar = true

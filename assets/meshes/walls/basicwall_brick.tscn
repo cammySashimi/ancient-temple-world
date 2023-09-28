@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2vpua06k6u8c"]
+
+[ext_resource type="PackedScene" uid="uid://c1gu27w5fmo47" path="res://assets/meshes/import/walls/basicwall.glb" id="1_ett1d"]
+[ext_resource type="Texture2D" uid="uid://cvlgn70hknuhv" path="res://assets/textures/walls/basicwall_brick.png" id="2_yfb13"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khlbn"]
+albedo_texture = ExtResource("2_yfb13")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkdlm"]
+size = Vector3(0.547653, 5.19583, 10.7762)
+
+[node name="basicwall_brick" instance=ExtResource("1_ett1d")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 5.236, 0)
+material_override = SubResource("StandardMaterial3D_khlbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.634, 0)
+shape = SubResource("BoxShape3D_kkdlm")

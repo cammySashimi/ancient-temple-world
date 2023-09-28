@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://ivugtbyvkdm6"]
+
+[ext_resource type="Script" path="res://scenes/actors/player.gd" id="1_s61u1"]
+[ext_resource type="Texture2D" uid="uid://d18ylhymeek4f" path="res://assets/textures/ui/hand_l.png" id="2_dcvvg"]
+[ext_resource type="Texture2D" uid="uid://b1ek0v6yxb1me" path="res://assets/textures/ui/hand_r.png" id="3_a3gca"]
+[ext_resource type="Script" path="res://scenes/actors/hand.gd" id="3_git1g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xjo25"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jpe72"]
+
+[node name="Player" type="CharacterBody3D"]
+floor_max_angle = 3.14159
+script = ExtResource("1_s61u1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xjo25")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+layers = 512
+mesh = SubResource("CapsuleMesh_jpe72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xjo25")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60825, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="LeftHand" type="Sprite3D" parent="Head/Camera3D"]
+transform = Transform3D(0.96785, -0.251529, 0, 0.251529, 0.96785, 0, 0, 0, 1, -0.699709, -0.384575, -0.661502)
+modulate = Color(0.568627, 0.647059, 0.745098, 1)
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("2_dcvvg")
+script = ExtResource("3_git1g")
+
+[node name="RightHand" type="Sprite3D" parent="Head/Camera3D"]
+transform = Transform3D(0.967709, 0.252069, 0, -0.252069, 0.967709, 0, 0, 0, 1, 0.7, -0.385, -0.662)
+modulate = Color(0.568627, 0.647059, 0.745098, 1)
+pixel_size = 0.002
+double_sided = false
+texture = ExtResource("3_a3gca")
+script = ExtResource("3_git1g")
+time = 20000.0
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

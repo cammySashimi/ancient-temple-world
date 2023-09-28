@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct6ij7s0huxai"]
+
+[ext_resource type="PackedScene" uid="uid://dashffhneeqf" path="res://assets/meshes/import/actors/sydiekitty.glb" id="1_r4mth"]
+[ext_resource type="Texture2D" uid="uid://b34qvc3krx1a7" path="res://assets/textures/actors/sydiekitty.png" id="2_jw501"]
+[ext_resource type="Script" path="res://scenes/actors/folks/sydiekitty.gd" id="2_xngga"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jubic"]
+specular_mode = 1
+albedo_texture = ExtResource("2_jw501")
+metallic_specular = 0.0
+roughness = 0.18
+emission = Color(1, 0.87451, 1, 1)
+emission_energy_multiplier = 0.02
+emission_texture = ExtResource("2_jw501")
+rim_enabled = true
+rim_tint = 1.0
+rim_texture = ExtResource("2_jw501")
+clearcoat_roughness = 0.0
+refraction_scale = -0.6
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qwjn4"]
+points = PackedVector3Array(-0.0294796, -0.483704, -0.0270384, -0.44039, 0.50628, 0.018892, -0.44039, 0.50628, -0.0124311, 0.379629, 0.426201, 0.00326747, 0.0762195, -0.133677, 0.365098, 0.315882, -0.192971, -0.311741, -0.436041, -0.224047, -0.132317, 0.437728, -0.284268, 0.153857, -0.374319, -0.208107, 0.243319, -0.118289, 0.0614727, -0.339244, -0.132461, 0.120407, 0.314426, -0.283723, -0.237759, -0.296322, 0.0910828, -0.418979, 0.243731, 0.328342, 0.046536, 0.286034, 0.256623, -0.419373, -0.19231, 0.487639, -0.1653, -0.103158, 0.34004, 0.34114, -0.129438, -0.316321, -0.390846, 0.0787269, 0.357913, 0.388753, 0.0924867, -0.482275, 0.243418, -0.0873185, 0.469197, -0.0131946, 0.139143, -0.163747, -0.387046, -0.236106, 0.349559, -0.422562, 0.0638238, -0.464312, 0.22701, 0.123201, 0.32954, 0.0167415, -0.295558, 0.046302, -0.256023, -0.345823, 0.315706, -0.267819, 0.288018, -0.328175, -0.0129503, -0.295863, -0.253931, -0.117975, 0.333037, -0.453622, -0.195007, 0.094105, 0.0746369, 0.164226, -0.29188, -0.208373, -0.311838, 0.287053)
+
+[node name="sydiekitty" instance=ExtResource("1_r4mth")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_xngga")
+
+[node name="mesh_id34" parent="root" index="0"]
+material_override = SubResource("StandardMaterial3D_jubic")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="root/mesh_id34" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="root/mesh_id34/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_qwjn4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="root/mesh_id34" index="1"]

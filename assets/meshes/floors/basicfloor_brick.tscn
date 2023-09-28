@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwlxy8ek7xxpk"]
+
+[ext_resource type="PackedScene" uid="uid://bwivuo2pgnvke" path="res://assets/meshes/import/floors/basicfloor.glb" id="1_6fp5q"]
+[ext_resource type="Texture2D" uid="uid://t3toh2kt6ha0" path="res://assets/textures/floors/floor_clay.png" id="2_0nrak"]
+[ext_resource type="Texture2D" uid="uid://gyf3632xxgkt" path="res://assets/textures/floors/floor_clay_normal.png" id="3_v07nu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4v2q"]
+albedo_texture = ExtResource("2_0nrak")
+normal_enabled = true
+normal_texture = ExtResource("3_v07nu")
+uv1_triplanar = true
+
+[node name="basicfloor_clay" instance=ExtResource("1_6fp5q")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a4v2q")

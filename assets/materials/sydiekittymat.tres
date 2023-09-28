@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cym1vf018s16o"]
+
+[ext_resource type="Texture2D" uid="uid://b34qvc3krx1a7" path="res://assets/textures/actors/sydiekitty.png" id="1_ya43c"]
+
+[resource]
+specular_mode = 1
+albedo_texture = ExtResource("1_ya43c")
+metallic_specular = 0.0
+roughness = 0.18
+emission = Color(1, 0.87451, 1, 1)
+emission_energy_multiplier = 0.02
+emission_texture = ExtResource("1_ya43c")
+rim_enabled = true
+rim_tint = 1.0
+rim_texture = ExtResource("1_ya43c")
+clearcoat_roughness = 0.0
+refraction_scale = -0.6

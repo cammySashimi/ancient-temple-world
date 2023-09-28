@@ -1,0 +1,386 @@
+[gd_scene load_steps=40 format=3 uid="uid://c7wxxd4eobnjt"]
+
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
+[ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
+[ext_resource type="PackedScene" uid="uid://s8hdmbf8i7q1" path="res://scenes/ui/ui.tscn" id="1_kc8vn"]
+[ext_resource type="LightmapGIData" uid="uid://df60d4rg27wtw" path="res://scenes/world.lmbake" id="3_lv2qp"]
+[ext_resource type="Environment" uid="uid://bynf3s6utyifw" path="res://scenes/env.tres" id="4_1vrg3"]
+[ext_resource type="PackedScene" uid="uid://bdjj3brbfd5df" path="res://scenes/terrain/firmament.tscn" id="6_eeybm"]
+[ext_resource type="Terrain3DStorage" uid="uid://cpgjwx0ormfo1" path="res://scenes/terrain/world_terrain3dstore.tres" id="6_hhpr4"]
+[ext_resource type="Script" path="res://scenes/River.gd" id="6_r8yyo"]
+[ext_resource type="Terrain3DTextureList" uid="uid://cpgi5wftm0kym" path="res://scenes/terrain/world_terraintexlist.tres" id="7_7o4r2"]
+[ext_resource type="Material" uid="uid://b2qw703iw1dr3" path="res://assets/materials/wet.tres" id="7_e2qgg"]
+[ext_resource type="Texture2D" uid="uid://6amrsha85ps" path="res://assets/textures/actors/mushushu_head.png" id="9_tls7c"]
+[ext_resource type="PackedScene" uid="uid://b3x6vh0yx4g38" path="res://scenes/actors/folks/little_bowl_guy.tscn" id="9_vj0on"]
+[ext_resource type="PackedScene" uid="uid://ct6ij7s0huxai" path="res://scenes/actors/folks/sydiekitty.tscn" id="10_pxyxc"]
+[ext_resource type="PackedScene" uid="uid://docuwnv52r2uc" path="res://scenes/actors/folks/votive.tscn" id="11_igiah"]
+[ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="11_il6ip"]
+[ext_resource type="PackedScene" uid="uid://dcwng2ll3hl0m" path="res://assets/meshes/items/ancient_bread.tscn" id="12_2m0sw"]
+[ext_resource type="Texture2D" uid="uid://dfeqdueu6asgv" path="res://assets/textures/floors/wet_nomal.png" id="12_a4a3x"]
+[ext_resource type="PackedScene" uid="uid://s82t1xyon2p0" path="res://scenes/terrain/courtyard_floors.tscn" id="13_0ijer"]
+[ext_resource type="PackedScene" uid="uid://ssgtb4xjc3dj" path="res://assets/meshes/scenery/brazier.tscn" id="13_oe6pc"]
+[ext_resource type="PackedScene" uid="uid://cipf64i8ej278" path="res://scenes/terrain/coutyard_walls.tscn" id="14_tegd4"]
+[ext_resource type="PackedScene" uid="uid://ds2ix1alqr7mi" path="res://assets/meshes/items/beer_urn.tscn" id="14_x44m3"]
+[ext_resource type="PackedScene" uid="uid://di1maillo2e67" path="res://scenes/terrain/coutyard_walls_upper.tscn" id="15_kc3o0"]
+[ext_resource type="PackedScene" uid="uid://d16a0gqn3cutm" path="res://assets/meshes/seals/seal_ostrich.tscn" id="15_kfyj1"]
+[ext_resource type="PackedScene" uid="uid://dsv8o3gho1kl0" path="res://assets/meshes/seals/seal_beer.tscn" id="16_rj3me"]
+[ext_resource type="PackedScene" uid="uid://cikb5cqw8wjvf" path="res://assets/meshes/seals/seal_dragons.tscn" id="17_eyx4v"]
+[ext_resource type="PackedScene" uid="uid://ch25t21m8l30o" path="res://assets/meshes/seals/seal_goatmen.tscn" id="18_epigq"]
+[ext_resource type="PackedScene" uid="uid://doms5gmgjymry" path="res://assets/meshes/seals/seal_goats.tscn" id="19_6hbif"]
+[ext_resource type="PackedScene" uid="uid://ckguchpiff24v" path="res://assets/meshes/seals/seal_rollercoaster.tscn" id="20_03aso"]
+[ext_resource type="PackedScene" uid="uid://6c7ljt1b4sqb" path="res://assets/meshes/seals/seal_sitman.tscn" id="21_0txco"]
+[ext_resource type="PackedScene" uid="uid://cktcdm8jkyq17" path="res://assets/meshes/seals/seal_stabby.tscn" id="22_uhi8n"]
+[ext_resource type="PackedScene" uid="uid://eckipuwu4xip" path="res://assets/meshes/seals/seal_worship.tscn" id="23_uh5vy"]
+[ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
+[ext_resource type="PackedScene" uid="uid://cdgkqu56n8ujm" path="res://assets/meshes/walls/basicwall_clay.tscn" id="32_0en3h"]
+[ext_resource type="AudioStream" uid="uid://wfjdxuhxcrrl" path="res://assets/bgm/loop_1.ogg" id="34_snd43"]
+[ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="35_fsjw8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vuwdh"]
+size = Vector3(1012.16, 1, 1107.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdwiv"]
+transparency = 1
+albedo_texture = ExtResource("11_il6ip")
+metallic_specular = 0.56
+roughness = 0.38
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("12_a4a3x")
+refraction_enabled = true
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phlw0"]
+size = Vector3(15.692, 1, 30.9453)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avx88"]
+size = Vector3(123.935, 4.7195, 155.363)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 512, 0, 512)
+script = ExtResource("1_16cwp")
+
+[node name="UI" parent="." instance=ExtResource("1_kc8vn")]
+mouse_filter = 2
+
+[node name="BakedLightmap" type="LightmapGI" parent="."]
+quality = 2
+bounces = 6
+generate_probes_subdiv = 3
+light_data = ExtResource("3_lv2qp")
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.92388, 0.219498, -0.313476, 0, 0.819152, 0.573577, 0.382683, 0.529916, -0.756799, 0, 0, 0)
+light_color = Color(0.403922, 0.443137, 0.615686, 1)
+light_angular_distance = 0.5
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.0
+directional_shadow_pancake_size = 0.0
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_1vrg3")
+
+[node name="Firmament" parent="." instance=ExtResource("6_eeybm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1493, 0, -4.79579)
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Ground" type="Terrain3D" parent="Terrain"]
+storage = ExtResource("6_hhpr4")
+texture_list = ExtResource("7_7o4r2")
+render_cast_shadows = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512, 0, -512)
+
+[node name="Braziers" type="Node3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
+
+[node name="Brazier" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
+
+[node name="Brazier2" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
+
+[node name="Brazier3" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, -3.22758)
+
+[node name="Brazier4" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.9133, 9.53674e-07, -3.22758)
+
+[node name="Brazier5" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.49708, 9.53674e-07, 44.8378)
+
+[node name="Brazier10" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 27.6681)
+
+[node name="Brazier11" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 14.6697)
+
+[node name="Brazier12" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 27.6681)
+
+[node name="Brazier13" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 14.6697)
+
+[node name="Brazier6" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.2834, 9.53674e-07, 44.8378)
+
+[node name="Brazier7" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, 44.8378)
+
+[node name="Brazier8" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.8814, 9.53674e-07, 44.8378)
+
+[node name="Brazier9" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.55048, -3.6123, 5.39521)
+
+[node name="River" type="Node3D" parent="Terrain"]
+script = ExtResource("6_r8yyo")
+
+[node name="MainRiver" type="CSGBox3D" parent="Terrain/River"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13812, -2, 8.02441)
+material_override = ExtResource("7_e2qgg")
+cast_shadow = 0
+size = Vector3(1000, 0.1, 1000)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/MainRiver"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/MainRiver/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.656, -1.2, 0)
+shape = SubResource("BoxShape3D_vuwdh")
+
+[node name="RiverUphill" type="CSGBox3D" parent="Terrain/River"]
+transform = Transform3D(0.942571, 0.145411, 0.30069, -7.26629e-09, 0.900258, -0.435357, -0.334004, 0.410355, 0.848558, 43.5098, -0.762136, -333.419)
+material_override = SubResource("StandardMaterial3D_wdwiv")
+size = Vector3(14.6973, 0.002, 55.2457)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/RiverUphill"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/RiverUphill/StaticBody3D"]
+transform = Transform3D(1, 5.96046e-08, 5.96046e-08, 0, 1, 0, 0, 0, 1, 1.216, -1.2, -12.809)
+shape = SubResource("BoxShape3D_phlw0")
+
+[node name="RiverUphill2" type="CSGBox3D" parent="Terrain/River"]
+transform = Transform3D(0.942641, 0, 0.333807, 0, 1, 0, -0.333807, 0, 0.942641, 26.532, 11.254, -435.426)
+material_override = SubResource("StandardMaterial3D_wdwiv")
+size = Vector3(114.268, 0.002, 153.833)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/RiverUphill2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/RiverUphill2/StaticBody3D"]
+transform = Transform3D(1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 0, -3.4, 0)
+shape = SubResource("BoxShape3D_avx88")
+
+[node name="Floors" type="Node3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
+
+[node name="CourtyardFloors" parent="Terrain/Floors" instance=ExtResource("13_0ijer")]
+
+[node name="Walls" type="Node3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
+
+[node name="CourtyardWalls" parent="Terrain/Walls" instance=ExtResource("14_tegd4")]
+
+[node name="CourtyardWallsUpper" parent="Terrain/Walls" instance=ExtResource("15_kc3o0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.196, 0)
+
+[node name="CityWall" type="Node3D" parent="Terrain/Walls"]
+
+[node name="CityWallSeg1" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 190.756, 0, 13.7973)
+
+[node name="CityWallSeg2" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 190.758, 0, 3.02324)
+
+[node name="CityWallSeg3" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
+transform = Transform3D(-0.916781, 0, -0.399389, 0, 1, 0, 0.399389, 0, -0.916781, 188.628, 0, -7.19542)
+
+[node name="Mushushes" type="Node3D" parent="Terrain"]
+
+[node name="Mush1" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(4.6793, 0, 8.83766, 0, 10, 0, -8.83766, 0, 4.6793, -334.121, 67.2229, -49.2803)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush2" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(4.22524, 0, -7.94653, 0, 9, 0, 7.94653, 0, 4.22524, -291.184, 45.1472, 115.226)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush5" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(-2.26245, 0, -13.816, 0, 14, 0, 13.816, 0, -2.26245, -309.081, 59.0128, -221.246)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush6" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(-7.25374, 0, -6.88354, 0, 10, 0, 6.88354, 0, -7.25374, -264.171, 36.1561, -399.553)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush7" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(9.07044, 0, 4.21036, 0, 10, 0, -4.21036, 0, 9.07044, -72.6493, 57.4884, -399.553)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush8" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(14.6557, 0, -3.19546, 0, 15, 0, 3.19546, 0, 14.6557, 147.795, 82.746, -342.073)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush9" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(7.04207, 0, -13.2442, 0, 15, 0, 13.2442, 0, 7.04207, 370.877, 58.0158, -325.219)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush10" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(5.34477, 0, 19.2726, 0, 20, 0, -19.2726, 0, 5.34477, 370.877, 106.083, -121.029)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush11" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(2.67238, 0, 9.6363, 0, 10, 0, -9.6363, 0, 2.67238, 395.097, 92.2925, 95.9282)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush12" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(-4.43696, 0, -11.1496, 0, 12, 0, 11.1496, 0, -4.43696, 350.023, 38.2208, 245.118)
+texture = ExtResource("9_tls7c")
+
+[node name="Mush3" type="Sprite3D" parent="Terrain/Mushushes"]
+transform = Transform3D(7.11044, 0, -8.39295, 0, 11, 0, 8.39295, 0, 7.11044, -351.833, 93.7635, 397.09)
+texture = ExtResource("9_tls7c")
+
+[node name="Actors" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
+
+[node name="Courtyard" type="Node3D" parent="Actors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1493, 0, -4.79579)
+
+[node name="LittleBowlGuy" parent="Actors/Courtyard" instance=ExtResource("9_vj0on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43229, 0.44928, 3.70415)
+modulate = Color(0.568627, 0.647059, 0.745098, 1)
+shaded = false
+
+[node name="Votive" parent="Actors/Courtyard" instance=ExtResource("11_igiah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2419, 0.975175, 6.54049)
+modulate = Color(0.568627, 0.647059, 0.745098, 1)
+shaded = false
+
+[node name="SydieKitty" parent="Actors/Courtyard" instance=ExtResource("10_pxyxc")]
+transform = Transform3D(1.19099, 0, -1.60672, 0, 2, 0, 1.60672, 0, 1.19099, 11.9194, 11.0721, -6.21943)
+
+[node name="Breads" type="Node3D" parent="Actors/Courtyard"]
+
+[node name="Bread" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.35885, 0.981951, 14.5189)
+
+[node name="Bread2" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.14433, 0.981951, 15.6168)
+
+[node name="Bread3" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.25118, 0.981951, 16.4561)
+
+[node name="Bread4" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.07002, 0.981951, 17.7924)
+
+[node name="Bread5" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.637574, 0.981951, 14.5189)
+
+[node name="Bread6" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.85209, 0.981951, 15.6168)
+
+[node name="Bread7" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.745243, 0.981951, 16.4561)
+
+[node name="Bread8" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.9264, 0.981951, 17.7924)
+
+[node name="Bread9" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 4.01702, 0.981951, 14.5189)
+
+[node name="Bread10" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.23154, 0.981951, 15.6168)
+
+[node name="Bread11" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 4.12469, 0.981951, 16.4561)
+
+[node name="Bread12" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.30584, 0.981951, 17.7924)
+
+[node name="Urns" type="Node3D" parent="Actors/Courtyard"]
+
+[node name="BeerUrn" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.53928, 0.801108, 5.05514)
+
+[node name="BeerUrn2" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.65808, 0.801108, 8.48464)
+
+[node name="BeerUrn3" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.26913, 0.801108, 5.23242)
+
+[node name="BeerUrn4" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.08117, 0.801108, 8.06622)
+
+[node name="BeerUrn5" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.659076, 0.801108, 11.9801)
+
+[node name="BeerUrn6" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.06678, 0.801108, 11.5054)
+
+[node name="BeerUrn7" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -8.85648, 0.801108, 5.05514)
+
+[node name="BeerUrn8" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.0538, 0.801108, 8.48464)
+
+[node name="BeerUrn9" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.6649, 0.801108, 5.23242)
+
+[node name="BeerUrn10" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -17.4769, 0.801108, 8.06622)
+
+[node name="BeerUrn11" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -10.7367, 0.801108, 11.9801)
+
+[node name="BeerUrn12" parent="Actors/Courtyard/Urns" instance=ExtResource("14_x44m3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.4625, 0.801108, 11.5054)
+
+[node name="Seals" type="Node3D" parent="Actors/Courtyard"]
+
+[node name="OstrichSeal" parent="Actors/Courtyard/Seals" instance=ExtResource("15_kfyj1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.54941, 1.14167, 12.4675)
+
+[node name="Seal_Beer" parent="Actors/Courtyard/Seals" instance=ExtResource("16_rj3me")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.08896, 1.12467, 15.4026)
+
+[node name="Seal_Dragons" parent="Actors/Courtyard/Seals" instance=ExtResource("17_eyx4v")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.9114, 0.991384, 17.8188)
+
+[node name="Seal_Goatmen" parent="Actors/Courtyard/Seals" instance=ExtResource("18_epigq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.1102, 0.860667, 20.3831)
+
+[node name="Seal_Goats" parent="Actors/Courtyard/Seals" instance=ExtResource("19_6hbif")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -17.1146, 1.06977, 19.2245)
+
+[node name="Seal_Rollercoaster" parent="Actors/Courtyard/Seals" instance=ExtResource("20_03aso")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.3242, 1.06915, 16.0943)
+
+[node name="Seal_Sitman" parent="Actors/Courtyard/Seals" instance=ExtResource("21_0txco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.3353, 1.15754, 25.5563)
+
+[node name="Seal_Stabby" parent="Actors/Courtyard/Seals" instance=ExtResource("22_uhi8n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.0697, 0.819242, 17.7577)
+
+[node name="Seal_Worship" parent="Actors/Courtyard/Seals" instance=ExtResource("23_uh5vy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.4771, 0.919575, 18.459)
+
+[node name="Bay" type="Node3D" parent="Actors"]
+
+[node name="Boat" parent="Actors/Bay" instance=ExtResource("27_856rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2092, -1.02545, 337.972)
+modulate = Color(0.329412, 0.403922, 0.498039, 1)
+shaded = false
+
+[node name="Player" parent="." instance=ExtResource("1_gjtjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.4163, 13.0476, -0.347565)
+floor_max_angle = 1.0472
+run_speed = 20.0
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_snd43")
+autoplay = true
+
+[node name="Palm" parent="." instance=ExtResource("35_fsjw8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.85681, 0.00675559, 24.0491)

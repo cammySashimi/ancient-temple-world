@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds2ix1alqr7mi"]
+
+[ext_resource type="PackedScene" uid="uid://cowb68rxceyhm" path="res://assets/meshes/import/items/beerurn.glb" id="1_8w2jv"]
+[ext_resource type="Script" path="res://scenes/actors/items/beer_urn.gd" id="2_k02tp"]
+[ext_resource type="Texture2D" uid="uid://bmpxx17kxx71b" path="res://assets/textures/items/beer_urn.png" id="2_ydb0v"]
+[ext_resource type="Texture2D" uid="uid://b8to58ek32mqm" path="res://assets/textures/items/beer_urn_normals.png" id="3_miyc1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04j5a"]
+specular_mode = 1
+albedo_texture = ExtResource("2_ydb0v")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("3_miyc1")
+rim_enabled = true
+rim = 0.1
+rim_tint = 0.0
+rim_texture = ExtResource("2_ydb0v")
+clearcoat_roughness = 1.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_371x8"]
+points = PackedVector3Array(1.19122, -0.962025, 0.578404, -0.886787, -0.618932, 0.18686, -0.885546, -0.61899, 0.286555, 0.0560491, 1.02649, -0.0792905, 0.373574, -2.20502, -0.556024, -0.133772, -0.767915, 1.27856, 1.32749, 0.602679, 0.343928, -0.473531, -2.20502, 0.608607, 0.113868, -0.619138, -0.859146, -0.049867, 0.443709, 1.19148, -0.632517, -2.04572, -0.397485, 0.267658, -2.31089, 0.661676, 0.85956, -0.718269, -0.658146, 0.810394, -0.917221, 1.13208, -0.57141, -0.521919, -0.548003, 1.25875, -0.817814, -0.0617285, 0.532783, -2.36399, 0.396774, -0.725003, -0.66875, 0.828949, -0.049867, 1.02649, 0.0796951, 0.737988, 0.574035, -0.146443, 1.32749, 0.602679, 0.449844, -0.840949, -0.467981, -0.164644, -0.473531, -2.04572, -0.556024, -0.884154, -0.569046, 0.485743, 0.460912, -0.619388, -0.853754, 0.532783, -2.25779, -0.397485, -0.689848, -2.07418, 0.0866141, -0.389694, -0.467709, -0.718576, 0.45828, -0.91379, 1.26686, -0.383371, -0.718305, 1.18143, -0.049867, 1.02649, -0.0792905, 1.25933, -0.917429, 0.485487)
+
+[node name="BeerUrn" groups=["beer_urn"] instance=ExtResource("1_8w2jv")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("2_k02tp")
+
+[node name="BeerUrn" parent="." index="0"]
+layers = 512
+material_override = SubResource("StandardMaterial3D_04j5a")
+gi_mode = 0
+
+[node name="Area3D" type="Area3D" parent="BeerUrn" index="0"]
+transform = Transform3D(1, -5.58794e-09, -1.49012e-08, 2.42144e-08, 1, -1.49012e-08, -1.49012e-08, 1.49012e-08, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeerUrn/Area3D" index="0"]
+transform = Transform3D(1, -3.72529e-09, -2.98023e-08, 5.58794e-08, 1, -1.49012e-08, -1.49012e-08, 2.98023e-08, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_371x8")

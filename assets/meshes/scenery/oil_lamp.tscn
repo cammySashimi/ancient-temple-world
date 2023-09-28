@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://7ipwo27phdfp"]
+
+[ext_resource type="PackedScene" uid="uid://cwvegoaqjmn4c" path="res://assets/meshes/import/scenery/oillamp.glb" id="1_pk0un"]
+[ext_resource type="Script" path="res://scenes/terrain/lamp_fire.gd" id="2_5tpae"]
+[ext_resource type="Texture2D" uid="uid://c3ecbds0ovq76" path="res://assets/textures/scenery/oillamp_lamp.png" id="2_kkntj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ntf3"]
+albedo_texture = ExtResource("2_kkntj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jougn"]
+shading_mode = 0
+albedo_color = Color(0.913725, 0.392157, 0, 1)
+
+[node name="OilLamp" instance=ExtResource("1_pk0un")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Lamp" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_7ntf3")
+
+[node name="Fire" parent="." index="1"]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_jougn")
+script = ExtResource("2_5tpae")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.06696, 0.470456, 0)
+light_color = Color(0.933333, 0.592157, 0, 1)
+light_energy = 0.1
+light_size = 1.0
+light_bake_mode = 1
