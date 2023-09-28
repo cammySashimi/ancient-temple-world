@@ -98,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
 
 [node name="Brazier" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
+visible = false
 
 [node name="Brazier2" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
