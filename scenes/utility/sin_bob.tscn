@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmxsqm3enqqja"]
+
+[ext_resource type="Script" path="res://scripts/sinbob.gd" id="1_xwrqb"]
+
+[node name="SinBob" type="Node3D"]
+script = ExtResource("1_xwrqb")
