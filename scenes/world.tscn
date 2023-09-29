@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=41 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -30,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://eckipuwu4xip" path="res://assets/meshes/seals/seal_worship.tscn" id="23_uh5vy"]
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
-[ext_resource type="PackedScene" uid="uid://cdgkqu56n8ujm" path="res://assets/meshes/walls/basicwall_clay.tscn" id="32_0en3h"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="35_fsjw8"]
@@ -63,6 +62,34 @@ tracks/1/keys = {
 "values": [-80.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_u1jt3"]
+resource_name = "BGM2Palace"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PalaceBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.138696, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_62670"]
 resource_name = "Cavern2BGM"
 length = 3.0
@@ -82,6 +109,34 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("CavernBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_q5ipm"]
+resource_name = "Palace2BGM"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.148651, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PalaceBGM:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -130,62 +185,6 @@ tracks/2/keys = {
 "values": [-80.0]
 }
 
-[sub_resource type="Animation" id="Animation_u1jt3"]
-resource_name = "BGM2Palace"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PalaceBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.138696, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_q5ipm"]
-resource_name = "Palace2BGM"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.148651, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PalaceBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mstnp"]
 _data = {
 "BGM2Cavern": SubResource("Animation_dwjra"),
@@ -226,6 +225,7 @@ environment = ExtResource("4_1vrg3")
 
 [node name="Firmament" parent="." instance=ExtResource("6_eeybm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1493, 0, -4.79579)
+visible = false
 
 [node name="Terrain" type="Node3D" parent="."]
 
@@ -294,23 +294,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.196, 0)
 
 [node name="CityWall" type="Node3D" parent="Terrain/Walls"]
 
-[node name="CityWallSeg1" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 190.756, 0, 13.7973)
-
-[node name="CityWallSeg2" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 190.758, 0, 3.02324)
-
-[node name="CityWallSeg3" parent="Terrain/Walls/CityWall" instance=ExtResource("32_0en3h")]
-transform = Transform3D(-0.916781, 0, -0.399389, 0, 1, 0, 0.399389, 0, -0.916781, 188.628, 0, -7.19542)
-
 [node name="Mushushes" type="Node3D" parent="Terrain"]
 
 [node name="Mush1" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(4.6793, 0, 8.83766, 0, 10, 0, -8.83766, 0, 4.6793, -334.121, 67.2229, -49.2803)
+transform = Transform3D(4.6793, 0, 8.83766, 0, 10, 0, -8.83766, 0, 4.6793, -242.921, 119.017, -49.2803)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush2" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(4.22524, 0, -7.94653, 0, 9, 0, 7.94653, 0, 4.22524, -291.184, 45.1472, 115.226)
+transform = Transform3D(4.22524, 0, -7.94653, 0, 9, 0, 7.94653, 0, 4.22524, -291.184, 128.183, 296.914)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush5" type="Sprite3D" parent="Terrain/Mushushes"]
