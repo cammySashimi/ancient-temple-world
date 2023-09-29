@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=42 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -29,9 +29,10 @@
 [ext_resource type="PackedScene" uid="uid://cktcdm8jkyq17" path="res://assets/meshes/seals/seal_stabby.tscn" id="22_uhi8n"]
 [ext_resource type="PackedScene" uid="uid://eckipuwu4xip" path="res://assets/meshes/seals/seal_worship.tscn" id="23_uh5vy"]
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
+[ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="PackedScene" uid="uid://cdgkqu56n8ujm" path="res://assets/meshes/walls/basicwall_clay.tscn" id="32_0en3h"]
-[ext_resource type="AudioStream" uid="uid://dkfv8kgtdop65" path="res://assets/bgm/caverns.ogg" id="32_q0dbu"]
-[ext_resource type="AudioStream" uid="uid://wfjdxuhxcrrl" path="res://assets/bgm/loop_1.ogg" id="34_snd43"]
+[ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
+[ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="35_fsjw8"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
@@ -116,11 +117,81 @@ tracks/1/keys = {
 "update": 0,
 "values": [-80.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PalaceBGM:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="Animation" id="Animation_u1jt3"]
+resource_name = "BGM2Palace"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PalaceBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.138696, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q5ipm"]
+resource_name = "Palace2BGM"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.148651, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PalaceBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mstnp"]
 _data = {
 "BGM2Cavern": SubResource("Animation_dwjra"),
+"BGM2Palace": SubResource("Animation_u1jt3"),
 "Cavern2BGM": SubResource("Animation_62670"),
+"Palace2BGM": SubResource("Animation_q5ipm"),
 "RESET": SubResource("Animation_mfj6a")
 }
 
@@ -418,11 +489,16 @@ run_speed = 20.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512, 0, -512)
 
 [node name="BGM" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("34_snd43")
+stream = ExtResource("31_bi732")
 autoplay = true
 
 [node name="CavernBGM" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("32_q0dbu")
+stream = ExtResource("32_irnb7")
+volume_db = -80.0
+autoplay = true
+
+[node name="PalaceBGM" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("33_pkkep")
 volume_db = -80.0
 autoplay = true
 
@@ -431,16 +507,28 @@ libraries = {
 "": SubResource("AnimationLibrary_mstnp")
 }
 
-[node name="Fade2Cavern" type="Area3D" parent="Music" groups=["fade_to_cavern", "music_fade"]]
+[node name="FadeBGM2Cavern" type="Area3D" parent="Music" groups=["fade_bgm_to_cavern", "music_fade"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 556.454)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Fade2Cavern"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeBGM2Cavern"]
 shape = SubResource("BoxShape3D_ac5tq")
 
-[node name="Fade2BGM" type="Area3D" parent="Music" groups=["fade_to_bgm", "music_fade"]]
+[node name="FadeCavern2BGM" type="Area3D" parent="Music" groups=["fade_cavern_to_bgm", "music_fade"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 554.311)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Fade2BGM"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeCavern2BGM"]
+shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="FadePalace2BGM" type="Area3D" parent="Music" groups=["fade_palace_to_bgm", "music_fade"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 502.143)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadePalace2BGM"]
+shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="FadeBGM2Palace" type="Area3D" parent="Music" groups=["fade_bgm_to_palace", "music_fade"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 499.723)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeBGM2Palace"]
 shape = SubResource("BoxShape3D_ac5tq")
 
 [node name="Palm" parent="." instance=ExtResource("35_fsjw8")]

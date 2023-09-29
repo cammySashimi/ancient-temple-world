@@ -200,16 +200,24 @@ func _get_clicked():
 			interacting_with = collision_parent
 			collision_parent.interact()
 
-# Collisions
+# My god please don't look at this
 func _on_area_3d_area_entered(area):
 	if area.is_in_group("music_fade"):
-		if area.is_in_group("fade_to_cavern"):
+		if area.is_in_group("fade_bgm_to_cavern"):
 			if global.now_playing != "cavern":
 				music_crossfade.play("BGM2Cavern")
 				global.now_playing = "cavern"
-		if area.is_in_group("fade_to_bgm"):
+		elif area.is_in_group("fade_cavern_to_bgm"):
 			if global.now_playing != "bgm":
 				music_crossfade.play("Cavern2BGM")
+				global.now_playing = "bgm"
+		elif area.is_in_group("fade_bgm_to_palace"):
+			if global.now_playing != "palace":
+				music_crossfade.play("BGM2Palace")
+				global.now_playing = "palace"
+		elif area.is_in_group("fade_palace_to_bgm"):
+			if global.now_playing != "bgm":
+				music_crossfade.play("Palace2BGM")
 				global.now_playing = "bgm"
 	
 	if area.owner.is_in_group("beer_urn"):
