@@ -1,6 +1,5 @@
 extends Control
 
-@onready var game_paused = false
 @onready var world = get_node("/root/World")
 
 @onready var showfps = false
@@ -32,8 +31,8 @@ func _process(_delta):
 			fpsmeter.show()
 	
 	if Input.is_action_just_pressed("menu"):
-		if !game_paused:
-			game_paused = true
+		if !global.game_paused:
+			global.game_paused = true
 			pausebg.show()
 			handcurs.hide()
 			mouthcurs.hide()
@@ -63,7 +62,7 @@ func _process(_delta):
 						8:
 							get_node("UICanvas/PauseBG/Seals/RollerCoasterSeal/Cover").hide()
 		else:
-			game_paused = false
+			global.game_paused = false
 			pausebg.hide()
 			code.show()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

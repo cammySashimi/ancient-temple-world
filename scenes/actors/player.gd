@@ -40,6 +40,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var hand_curs = get_node("/root/World/UI/UICanvas/HandCursor")
 @onready var mouth_curs = get_node("/root/World/UI/UICanvas/MouthCursor")
 
+@onready var music_crossfade = $"../Music/CrossFade"
+
 @onready var home_position = position
 
 func _ready():
@@ -48,7 +50,7 @@ func _ready():
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		if !ui.game_paused:
+		if !global.game_paused:
 			# Rotate camera
 			head.rotate_y(-event.relative.x * look_sensitivity)
 			camera.rotate_x(-event.relative.y * look_sensitivity)
@@ -77,7 +79,7 @@ func _physics_process(delta):
 				dialog.queue_free()
 	
 	# If game isn't paused:
-	if !ui.game_paused:
+	if !global.game_paused:
 		
 		# Add the gravity.
 		if not is_on_floor():
@@ -200,6 +202,16 @@ func _get_clicked():
 
 # Collisions
 func _on_area_3d_area_entered(area):
+	if area.is_in_group("music_fade"):
+		if area.is_in_group("fade_to_cavern"):
+			if global.now_playing != "cavern":
+				music_crossfade.play("BGM2Cavern")
+				global.now_playing = "cavern"
+		if area.is_in_group("fade_to_bgm"):
+			if global.now_playing != "bgm":
+				music_crossfade.play("Cavern2BGM")
+				global.now_playing = "bgm"
+	
 	if area.owner.is_in_group("beer_urn"):
 		jump_boost += 0.4
 		world.urn_score += 1

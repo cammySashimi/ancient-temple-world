@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=39 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -7,16 +7,13 @@
 [ext_resource type="Environment" uid="uid://bynf3s6utyifw" path="res://scenes/env.tres" id="4_1vrg3"]
 [ext_resource type="PackedScene" uid="uid://bdjj3brbfd5df" path="res://scenes/terrain/firmament.tscn" id="6_eeybm"]
 [ext_resource type="Terrain3DStorage" uid="uid://cpgjwx0ormfo1" path="res://scenes/terrain/world_terrain3dstore.tres" id="6_hhpr4"]
-[ext_resource type="Script" path="res://scenes/River.gd" id="6_r8yyo"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cpgi5wftm0kym" path="res://scenes/terrain/world_terraintexlist.tres" id="7_7o4r2"]
-[ext_resource type="Material" uid="uid://b2qw703iw1dr3" path="res://assets/materials/wet.tres" id="7_e2qgg"]
+[ext_resource type="PackedScene" uid="uid://cy4fa0k5hj5uu" path="res://scenes/terrain/river.tscn" id="9_6xn7w"]
 [ext_resource type="Texture2D" uid="uid://6amrsha85ps" path="res://assets/textures/actors/mushushu_head.png" id="9_tls7c"]
 [ext_resource type="PackedScene" uid="uid://b3x6vh0yx4g38" path="res://scenes/actors/folks/little_bowl_guy.tscn" id="9_vj0on"]
 [ext_resource type="PackedScene" uid="uid://ct6ij7s0huxai" path="res://scenes/actors/folks/sydiekitty.tscn" id="10_pxyxc"]
 [ext_resource type="PackedScene" uid="uid://docuwnv52r2uc" path="res://scenes/actors/folks/votive.tscn" id="11_igiah"]
-[ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="11_il6ip"]
 [ext_resource type="PackedScene" uid="uid://dcwng2ll3hl0m" path="res://assets/meshes/items/ancient_bread.tscn" id="12_2m0sw"]
-[ext_resource type="Texture2D" uid="uid://dfeqdueu6asgv" path="res://assets/textures/floors/wet_nomal.png" id="12_a4a3x"]
 [ext_resource type="PackedScene" uid="uid://s82t1xyon2p0" path="res://scenes/terrain/courtyard_floors.tscn" id="13_0ijer"]
 [ext_resource type="PackedScene" uid="uid://ssgtb4xjc3dj" path="res://assets/meshes/scenery/brazier.tscn" id="13_oe6pc"]
 [ext_resource type="PackedScene" uid="uid://cipf64i8ej278" path="res://scenes/terrain/coutyard_walls.tscn" id="14_tegd4"]
@@ -33,28 +30,102 @@
 [ext_resource type="PackedScene" uid="uid://eckipuwu4xip" path="res://assets/meshes/seals/seal_worship.tscn" id="23_uh5vy"]
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
 [ext_resource type="PackedScene" uid="uid://cdgkqu56n8ujm" path="res://assets/meshes/walls/basicwall_clay.tscn" id="32_0en3h"]
+[ext_resource type="AudioStream" uid="uid://dkfv8kgtdop65" path="res://assets/bgm/caverns.ogg" id="32_q0dbu"]
 [ext_resource type="AudioStream" uid="uid://wfjdxuhxcrrl" path="res://assets/bgm/loop_1.ogg" id="34_snd43"]
 [ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="35_fsjw8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vuwdh"]
-size = Vector3(1012.16, 1, 1107.19)
+[sub_resource type="Animation" id="Animation_dwjra"]
+resource_name = "BGM2Cavern"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CavernBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.143587, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdwiv"]
-transparency = 1
-albedo_texture = ExtResource("11_il6ip")
-metallic_specular = 0.56
-roughness = 0.38
-normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource("12_a4a3x")
-refraction_enabled = true
-uv1_triplanar = true
+[sub_resource type="Animation" id="Animation_62670"]
+resource_name = "Cavern2BGM"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.183011, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CavernBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(5.85634, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_phlw0"]
-size = Vector3(15.692, 1, 30.9453)
+[sub_resource type="Animation" id="Animation_mfj6a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BGM:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CavernBGM:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_avx88"]
-size = Vector3(123.935, 4.7195, 155.363)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mstnp"]
+_data = {
+"BGM2Cavern": SubResource("Animation_dwjra"),
+"Cavern2BGM": SubResource("Animation_62670"),
+"RESET": SubResource("Animation_mfj6a")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac5tq"]
+size = Vector3(28.4796, 7.51341, 1)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 512, 0, 512)
@@ -98,7 +169,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
 
 [node name="Brazier" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
-visible = false
 
 [node name="Brazier2" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
@@ -136,42 +206,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.8814, 9.53674e-07, 
 [node name="Brazier9" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.55048, -3.6123, 5.39521)
 
-[node name="River" type="Node3D" parent="Terrain"]
-script = ExtResource("6_r8yyo")
-
-[node name="MainRiver" type="CSGBox3D" parent="Terrain/River"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13812, -2, 8.02441)
-material_override = ExtResource("7_e2qgg")
-cast_shadow = 0
-size = Vector3(1000, 0.1, 1000)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/MainRiver"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/MainRiver/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.656, -1.2, 0)
-shape = SubResource("BoxShape3D_vuwdh")
-
-[node name="RiverUphill" type="CSGBox3D" parent="Terrain/River"]
-transform = Transform3D(0.942571, 0.145411, 0.30069, -7.26629e-09, 0.900258, -0.435357, -0.334004, 0.410355, 0.848558, 43.5098, -0.762136, -333.419)
-material_override = SubResource("StandardMaterial3D_wdwiv")
-size = Vector3(14.6973, 0.002, 55.2457)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/RiverUphill"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/RiverUphill/StaticBody3D"]
-transform = Transform3D(1, 5.96046e-08, 5.96046e-08, 0, 1, 0, 0, 0, 1, 1.216, -1.2, -12.809)
-shape = SubResource("BoxShape3D_phlw0")
-
-[node name="RiverUphill2" type="CSGBox3D" parent="Terrain/River"]
-transform = Transform3D(0.942641, 0, 0.333807, 0, 1, 0, -0.333807, 0, 0.942641, 26.532, 11.254, -435.426)
-material_override = SubResource("StandardMaterial3D_wdwiv")
-size = Vector3(114.268, 0.002, 153.833)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Terrain/River/RiverUphill2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/River/RiverUphill2/StaticBody3D"]
-transform = Transform3D(1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 0, -3.4, 0)
-shape = SubResource("BoxShape3D_avx88")
+[node name="River" parent="Terrain" instance=ExtResource("9_6xn7w")]
 
 [node name="Floors" type="Node3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
@@ -375,13 +410,38 @@ modulate = Color(0.329412, 0.403922, 0.498039, 1)
 shaded = false
 
 [node name="Player" parent="." instance=ExtResource("1_gjtjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.4163, 13.0476, -0.347565)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.9897, 13.0476, 37.8678)
 floor_max_angle = 1.0472
 run_speed = 20.0
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512, 0, -512)
+
+[node name="BGM" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("34_snd43")
 autoplay = true
+
+[node name="CavernBGM" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("32_q0dbu")
+volume_db = -80.0
+autoplay = true
+
+[node name="CrossFade" type="AnimationPlayer" parent="Music"]
+libraries = {
+"": SubResource("AnimationLibrary_mstnp")
+}
+
+[node name="Fade2Cavern" type="Area3D" parent="Music" groups=["fade_to_cavern", "music_fade"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 556.454)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Fade2Cavern"]
+shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="Fade2BGM" type="Area3D" parent="Music" groups=["fade_to_bgm", "music_fade"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 554.311)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Music/Fade2BGM"]
+shape = SubResource("BoxShape3D_ac5tq")
 
 [node name="Palm" parent="." instance=ExtResource("35_fsjw8")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.85681, 0.00675559, 24.0491)
