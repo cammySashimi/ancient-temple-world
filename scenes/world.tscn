@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=41 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -235,7 +235,7 @@ render_cast_shadows = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512, 0, -512)
 
 [node name="Braziers" type="Node3D" parent="Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1359, 13.0813, -4.79089)
 
 [node name="Brazier" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
@@ -339,6 +339,23 @@ texture = ExtResource("9_tls7c")
 transform = Transform3D(7.11044, 0, -8.39295, 0, 11, 0, 8.39295, 0, 7.11044, -351.833, 93.7635, 397.09)
 texture = ExtResource("9_tls7c")
 
+[node name="Pots" type="Node3D" parent="Terrain"]
+
+[node name="pot_1" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -55.3185, 12.8067, 40.9933)
+
+[node name="pot_2" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
+transform = Transform3D(0.0486345, 0, 0.698308, 0, 0.7, 0, -0.698308, 0, 0.0486345, -57.8131, 12.8067, 41.0316)
+
+[node name="pot_3" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
+transform = Transform3D(0.443453, 0, -0.230975, 0, 0.5, 0, 0.230975, 0, 0.443453, -56.8835, 12.8067, 39.3847)
+
+[node name="pot_4" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
+transform = Transform3D(0.532144, 0, -0.27717, 0, 1.39138, 0, 0.27717, 0, 0.532144, -54.6013, 12.8067, 38.862)
+
+[node name="pot_5" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
+transform = Transform3D(-1.5, 5.87374e-08, 0, -2.26494e-07, -0.389, 0, 0, 0, 1.5, -37.0517, 14.5293, 60.7425)
+
 [node name="Actors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
 
@@ -359,12 +376,13 @@ shaded = false
 transform = Transform3D(1.19099, 0, -1.60672, 0, 2, 0, 1.60672, 0, 1.19099, 11.9194, 11.0721, -6.21943)
 
 [node name="Breads" type="Node3D" parent="Actors/Courtyard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207062, -0.188445, -0.857849)
 
 [node name="Bread" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.35885, 0.981951, 14.5189)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.359, 1.547, 14.519)
 
 [node name="Bread2" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.14433, 0.981951, 15.6168)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.28146, 1.07554, 15.613)
 
 [node name="Bread3" parent="Actors/Courtyard/Breads" instance=ExtResource("12_2m0sw")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.25118, 0.981951, 16.4561)
