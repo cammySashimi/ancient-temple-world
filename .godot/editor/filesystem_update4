@@ -1,0 +1,15 @@
+res://scenes/terrain/world_terraintexlist.tres
+res://scenes/terrain/world_terrain3dstore.tres
+res://scenes/world.tscn
+res://scenes/actors/hand.gd
+res://scenes/ui/ui.gd
+res://scenes/env.tres
+res://assets/materials/wet.tres
+res://assets/materials/brazier_fire.tres
+res://assets/materials/brazier_process_mat.tres
+res://scenes/ui/HamCode.gd
+res://assets/meshes/items/beer_urn.tscn
+res://scenes/ui/ui.tscn
+res://scenes/actors/player.tscn
+res://assets/meshes/scenery/oil_lamp.tscn
+res://assets/meshes/floors/basicfloor_clay.tscn

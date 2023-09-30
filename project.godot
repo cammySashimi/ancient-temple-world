@@ -73,9 +73,8 @@ mouse_cursor/tooltip_position_offset=Vector2(20, 10)
 
 [editor]
 
-movie_writer/mjpeg_quality=0.25
 movie_writer/movie_file="/home/cammy/ancient_rec.avi"
-movie_writer/fps=24
+movie_writer/fps=30
 export/convert_text_resources_to_binary=false
 
 [editor_plugins]

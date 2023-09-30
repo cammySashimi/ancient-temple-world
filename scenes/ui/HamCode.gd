@@ -14,12 +14,12 @@ func _process(_delta):
 		position.x -= 2
 		if position.x == 0:
 			#textwidth:
-			var nexttext = preload("res://scenes/utility/code_bit.tscn").instance()
-			nexttext.init()
-			nexttext.codenum = codenum + 1
-			nexttext.text = hammurabi.code[nexttext.codenum]
-			textwidth = size.x
-			print(str(textwidth))
+			#var nexttext = preload("res://scenes/utility/code_bit.tscn").instance()
+			#nexttext.init()
+			#nexttext.codenum = codenum + 1
+			#nexttext.text = hammurabi.code[nexttext.codenum]
+			#textwidth = size.x
+			#print(str(textwidth))
 			position.x = 20
 		elif position.x <= -textwidth:
 			queue_free()

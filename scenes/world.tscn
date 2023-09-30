@@ -224,7 +224,6 @@ environment = ExtResource("4_1vrg3")
 
 [node name="Firmament" parent="." instance=ExtResource("6_eeybm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1493, 0, -4.79579)
-visible = false
 
 [node name="Terrain" type="Node3D" parent="."]
 
@@ -471,9 +470,8 @@ modulate = Color(0.329412, 0.403922, 0.498039, 1)
 shaded = false
 
 [node name="Player" parent="." instance=ExtResource("1_gjtjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.1659, 13.642, 16.9952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.8018, 13.5564, 20.2135)
 floor_max_angle = 1.0472
-run_speed = 20.0
 
 [node name="Music" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512, 0, -512)
