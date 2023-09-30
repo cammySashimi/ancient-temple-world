@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 global="*res://global.gd"
+hammurabi="*res://hammurabi.gd"
 
 [dialogic]
 

@@ -467,7 +467,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.4771, 0.919575, 18.
 [node name="Bay" type="Node3D" parent="Actors"]
 
 [node name="Boat" parent="Actors/Bay" instance=ExtResource("27_856rc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2092, -1.02545, 337.972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2092, -14.1064, 337.972)
 modulate = Color(0.329412, 0.403922, 0.498039, 1)
 shaded = false
 
