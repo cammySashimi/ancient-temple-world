@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cktcdm8jkyq17"]
+[gd_scene load_steps=8 format=3 uid="uid://cktcdm8jkyq17"]
 
 [ext_resource type="PackedScene" uid="uid://tv86eojhcj04" path="res://assets/meshes/import/items/seal.glb" id="1_wcgx2"]
 [ext_resource type="Script" path="res://scenes/actors/items/seal.gd" id="2_ufne1"]
+[ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_4ppv2"]
 [ext_resource type="Texture2D" uid="uid://6g4q58k5mkek" path="res://assets/textures/items/seals/tex/seal_stabby.png" id="3_eaoe1"]
 [ext_resource type="Texture2D" uid="uid://cvxckl0fh6rep" path="res://assets/textures/items/seals/tex/seal_stabby_normal.png" id="4_t7lqh"]
 
@@ -20,11 +21,13 @@ radius = 0.624151
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("2_ufne1")
 
-[node name="Cylinder" parent="." index="0"]
+[node name="SinBob" parent="." index="0" instance=ExtResource("3_4ppv2")]
+
+[node name="Cylinder" parent="." index="1"]
 material_override = SubResource("StandardMaterial3D_jfbih")
 gi_mode = 2
 
-[node name="Area3D" type="Area3D" parent="." index="1"]
+[node name="Area3D" type="Area3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("CylinderShape3D_orn7s")

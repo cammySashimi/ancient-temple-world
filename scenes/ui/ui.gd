@@ -1,6 +1,5 @@
 extends Control
 
-@onready var game_paused = false
 @onready var world = get_node("/root/World")
 
 @onready var showfps = false
@@ -11,7 +10,7 @@ extends Control
 @onready var fpsmeter = self.get_node("UICanvas/FPSMeter")
 @onready var urncounter = self.get_node("UICanvas/PauseBG/Icons/UrnIcon/UrnScore")
 @onready var breadcounter = self.get_node("UICanvas/PauseBG/Icons/BreadIcon/BreadScore")
-@onready var code = self.get_node("UICanvas/Code")
+#@onready var code = self.get_node("UICanvas/Code")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,12 +31,12 @@ func _process(_delta):
 			fpsmeter.show()
 	
 	if Input.is_action_just_pressed("menu"):
-		if !game_paused:
-			game_paused = true
+		if !global.game_paused:
+			global.game_paused = true
 			pausebg.show()
 			handcurs.hide()
 			mouthcurs.hide()
-			code.hide()
+			#code.hide()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			var i = -1
 			for seal in world.seals:
@@ -63,9 +62,9 @@ func _process(_delta):
 						8:
 							get_node("UICanvas/PauseBG/Seals/RollerCoasterSeal/Cover").hide()
 		else:
-			game_paused = false
+			global.game_paused = false
 			pausebg.hide()
-			code.show()
+			#scode.show()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_quit_button_pressed():

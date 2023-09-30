@@ -32,6 +32,11 @@ shape = SubResource("CapsuleShape3D_xjo25")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60825, 0)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Head"]
+light_color = Color(0.933333, 0.592157, 0, 1)
+light_energy = 0.1
+light_size = 0.25
+
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="LeftHand" type="Sprite3D" parent="Head/Camera3D"]

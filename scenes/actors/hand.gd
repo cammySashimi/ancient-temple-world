@@ -7,7 +7,6 @@ extends Sprite3D
 @onready var root_y = position.y
 
 @onready var player = $"../../.."
-@onready var ui = get_node("/root/World/UI")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +14,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !ui.game_paused:
+	if !global.game_paused:
 		time += player.velocity.length()
 		position.y = root_y + (sin(time * bob_frequency) * bob_amplitude)

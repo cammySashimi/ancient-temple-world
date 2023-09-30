@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy4fa0k5hj5uu"]
+
+[ext_resource type="Script" path="res://scenes/River.gd" id="1_78m53"]
+[ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="2_mr17u"]
+[ext_resource type="Material" uid="uid://b2qw703iw1dr3" path="res://assets/materials/wet.tres" id="3_w5b17"]
+[ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="4_rtsb6"]
+[ext_resource type="Texture2D" uid="uid://dfeqdueu6asgv" path="res://assets/textures/floors/wet_nomal.png" id="5_8np4v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vuwdh"]
+size = Vector3(1012.16, 1, 1107.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdwiv"]
+transparency = 1
+albedo_texture = ExtResource("4_rtsb6")
+metallic_specular = 0.56
+roughness = 0.38
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("5_8np4v")
+refraction_enabled = true
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phlw0"]
+size = Vector3(15.692, 1, 30.9453)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avx88"]
+size = Vector3(123.935, 4.7195, 155.363)
+
+[node name="River" type="Node3D"]
+script = ExtResource("1_78m53")
+
+[node name="SinBob" parent="." instance=ExtResource("2_mr17u")]
+bob_amplitude = 0.5
+rotation_speed = 0.0
+
+[node name="MainRiver" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13812, -2, 8.02441)
+material_override = ExtResource("3_w5b17")
+cast_shadow = 0
+size = Vector3(1000, 0.1, 1000)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRiver"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRiver/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.656, -1.2, 0)
+shape = SubResource("BoxShape3D_vuwdh")
+
+[node name="RiverUphill" type="CSGBox3D" parent="."]
+transform = Transform3D(0.942571, 0.145411, 0.30069, -7.26629e-09, 0.900258, -0.435357, -0.334004, 0.410355, 0.848558, 43.5098, -0.762136, -333.419)
+material_override = SubResource("StandardMaterial3D_wdwiv")
+size = Vector3(14.6973, 0.002, 55.2457)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RiverUphill"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverUphill/StaticBody3D"]
+transform = Transform3D(1, 5.96046e-08, 5.96046e-08, 0, 1, 0, 0, 0, 1, 1.216, -1.2, -12.809)
+shape = SubResource("BoxShape3D_phlw0")
+
+[node name="RiverUphill2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.942641, 0, 0.333807, 0, 1, 0, -0.333807, 0, 0.942641, 26.532, 11.254, -435.426)
+material_override = SubResource("StandardMaterial3D_wdwiv")
+size = Vector3(114.268, 0.002, 153.833)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RiverUphill2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverUphill2/StaticBody3D"]
+transform = Transform3D(1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 0, -3.4, 0)
+shape = SubResource("BoxShape3D_avx88")
