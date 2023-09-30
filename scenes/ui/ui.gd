@@ -10,7 +10,7 @@ extends Control
 @onready var fpsmeter = self.get_node("UICanvas/FPSMeter")
 @onready var urncounter = self.get_node("UICanvas/PauseBG/Icons/UrnIcon/UrnScore")
 @onready var breadcounter = self.get_node("UICanvas/PauseBG/Icons/BreadIcon/BreadScore")
-@onready var code = self.get_node("UICanvas/Code")
+#@onready var code = self.get_node("UICanvas/Code")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +36,7 @@ func _process(_delta):
 			pausebg.show()
 			handcurs.hide()
 			mouthcurs.hide()
-			code.hide()
+			#code.hide()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			var i = -1
 			for seal in world.seals:
@@ -64,7 +64,7 @@ func _process(_delta):
 		else:
 			global.game_paused = false
 			pausebg.hide()
-			code.show()
+			#scode.show()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_quit_button_pressed():
