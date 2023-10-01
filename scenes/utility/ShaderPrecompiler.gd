@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var numFrames: int = 600  # The number of frames to display all materials
+@export var numFrames: int = 5  # The number of frames to display all materials
 
 signal allShadersCompiled  # This signal is emitted when the node frees itself (i.e., all materials are compiled)
 

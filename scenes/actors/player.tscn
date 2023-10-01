@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60825, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Head"]
 light_color = Color(0.933333, 0.592157, 0, 1)
-light_energy = 0.1
+light_energy = 0.2
 light_size = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
@@ -44,6 +44,7 @@ transform = Transform3D(0.96785, -0.251529, 0, 0.251529, 0.96785, 0, 0, 0, 1, -0
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 pixel_size = 0.002
 double_sided = false
+no_depth_test = true
 texture = ExtResource("2_dcvvg")
 script = ExtResource("3_git1g")
 bob_frequency = 0.02
@@ -53,6 +54,7 @@ transform = Transform3D(0.967709, 0.252069, 0, -0.252069, 0.967709, 0, 0, 0, 1, 
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 pixel_size = 0.002
 double_sided = false
+no_depth_test = true
 texture = ExtResource("3_a3gca")
 script = ExtResource("3_git1g")
 time = 20000.0

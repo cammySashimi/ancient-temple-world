@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=44 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -32,10 +32,10 @@
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
-[ext_resource type="PackedScene" uid="uid://3ray4yjni14g" path="res://assets/meshes/scenery/courtyard_house.tscn" id="33_fp8rn"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://cbtfnu8ol0xib" path="res://assets/meshes/scenery/oldebede.tscn" id="33_q4slx"]
 [ext_resource type="PackedScene" uid="uid://buad7wfa2yphx" path="res://assets/meshes/scenery/pot_1.tscn" id="35_y1blu"]
+[ext_resource type="PackedScene" uid="uid://3ray4yjni14g" path="res://assets/meshes/scenery/courtyard_house.tscn" id="36_7fhuh"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
 resource_name = "BGM2Cavern"
@@ -544,3 +544,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.
 
 [node name="pot_3" parent="." instance=ExtResource("35_y1blu")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)
+
+[node name="courtyard_house" parent="." instance=ExtResource("36_7fhuh")]
+transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.5742, 31.4384)
