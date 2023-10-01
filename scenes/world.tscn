@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=41 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
+[ext_resource type="PackedScene" uid="uid://3ray4yjni14g" path="res://assets/meshes/scenery/courtyard_house.tscn" id="33_fp8rn"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
@@ -204,6 +205,7 @@ script = ExtResource("1_16cwp")
 mouse_filter = 2
 
 [node name="BakedLightmap" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.89038)
 quality = 2
 bounces = 6
 generate_probes_subdiv = 3
@@ -242,6 +244,9 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -
 
 [node name="Brazier2" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
+
+[node name="Brazier14" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 65.3664, -2.46085, 36.296)
 
 [node name="Brazier3" parent="Terrain/Braziers" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, -3.22758)
@@ -520,3 +525,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 499.723)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeBGM2Palace"]
 shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="courtyard_house" parent="." instance=ExtResource("33_fp8rn")]
+transform = Transform3D(-0.641805, 0, -1.25014, 0, 1.364, 0, 1.23859, 0, -0.647786, -1.99829, 13.8536, 31.3623)
