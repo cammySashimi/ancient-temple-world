@@ -24,6 +24,7 @@ script = ExtResource("2_lmhg6")
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_whvs3")]
 
 [node name="Cylinder" parent="." index="1"]
+layers = 512
 material_override = SubResource("StandardMaterial3D_jfbih")
 gi_mode = 2
 

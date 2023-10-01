@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://clkv8dswqm6wa"]
+
+[ext_resource type="Texture2D" uid="uid://c0xekds77hotn" path="res://assets/meshes/import/scenery/oldebede_oldebede-wood-texture.png" id="1_i6j34"]
+[ext_resource type="Texture2D" uid="uid://dr7nojaj7yrv5" path="res://assets/meshes/import/scenery/oldebede_oldebede-wood-normal.png" id="2_rvbdi"]
+
+[resource]
+resource_name = "bedwood"
+albedo_texture = ExtResource("1_i6j34")
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("2_rvbdi")

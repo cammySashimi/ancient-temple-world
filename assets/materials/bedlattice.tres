@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://1djlqh7dn13w"]
+
+[ext_resource type="Texture2D" uid="uid://dbtlwvceg3n4i" path="res://assets/meshes/import/scenery/oldebede_oldebede-platform-texture-oldebede-platform-alpha.png" id="1_yvspn"]
+[ext_resource type="Texture2D" uid="uid://b7yqyo7a2ih0m" path="res://assets/meshes/import/scenery/oldebede_oldebede-platform-normal.png" id="2_cftmg"]
+
+[resource]
+resource_name = "bed_lattice"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_yvspn")
+normal_enabled = true
+normal_texture = ExtResource("2_cftmg")
