@@ -16,6 +16,7 @@ points = PackedVector3Array(-3, -0.0694025, -3, -3, 0.0694025, -3, 3, -0.0694025
 [node name="basicfloor_clay" instance=ExtResource("1_v6imu")]
 
 [node name="Cube" parent="." index="0"]
+layers = 256
 surface_material_override/0 = SubResource("StandardMaterial3D_a4v2q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ancient Temple World"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/loadscreen.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/image="res://assets/textures/ui/boot.png"
 boot_splash/fullsize=false
@@ -162,4 +162,5 @@ warp_home={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
 mesh_lod/lod_change/threshold_pixels=2.0

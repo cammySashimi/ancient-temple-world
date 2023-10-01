@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=43 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
 [ext_resource type="PackedScene" uid="uid://s8hdmbf8i7q1" path="res://scenes/ui/ui.tscn" id="1_kc8vn"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c8x2uccsnswk3" path="res://world.occ" id="3_22j5p"]
 [ext_resource type="LightmapGIData" uid="uid://df60d4rg27wtw" path="res://scenes/world.lmbake" id="3_lv2qp"]
 [ext_resource type="Environment" uid="uid://bynf3s6utyifw" path="res://scenes/env.tres" id="4_1vrg3"]
 [ext_resource type="PackedScene" uid="uid://bdjj3brbfd5df" path="res://scenes/terrain/firmament.tscn" id="6_eeybm"]
@@ -32,6 +33,8 @@
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
+[ext_resource type="PackedScene" uid="uid://cbtfnu8ol0xib" path="res://assets/meshes/scenery/oldebede.tscn" id="33_q4slx"]
+[ext_resource type="PackedScene" uid="uid://buad7wfa2yphx" path="res://assets/meshes/scenery/pot_1.tscn" id="35_y1blu"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
 resource_name = "BGM2Cavern"
@@ -203,6 +206,11 @@ script = ExtResource("1_16cwp")
 [node name="UI" parent="." instance=ExtResource("1_kc8vn")]
 mouse_filter = 2
 
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("3_22j5p")
+bake_mask = 4293918721
+bake_simplification_distance = 2.0
+
 [node name="BakedLightmap" type="LightmapGI" parent="."]
 quality = 2
 bounces = 6
@@ -337,23 +345,6 @@ texture = ExtResource("9_tls7c")
 [node name="Mush3" type="Sprite3D" parent="Terrain/Mushushes"]
 transform = Transform3D(7.11044, 0, -8.39295, 0, 11, 0, 8.39295, 0, 7.11044, -351.833, 93.7635, 397.09)
 texture = ExtResource("9_tls7c")
-
-[node name="Pots" type="Node3D" parent="Terrain"]
-
-[node name="pot_1" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -55.3185, 12.8067, 40.9933)
-
-[node name="pot_2" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
-transform = Transform3D(0.0486345, 0, 0.698308, 0, 0.7, 0, -0.698308, 0, 0.0486345, -57.8131, 12.8067, 41.0316)
-
-[node name="pot_3" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
-transform = Transform3D(0.443453, 0, -0.230975, 0, 0.5, 0, 0.230975, 0, 0.443453, -56.8835, 12.8067, 39.3847)
-
-[node name="pot_4" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
-transform = Transform3D(0.532144, 0, -0.27717, 0, 1.39138, 0, 0.27717, 0, 0.532144, -54.6013, 12.8067, 38.862)
-
-[node name="pot_5" parent="Terrain/Pots" instance=ExtResource("36_8ixnh")]
-transform = Transform3D(-1.5, 5.87374e-08, 0, -2.26494e-07, -0.389, 0, 0, 0, 1.5, -37.0517, 14.5293, 60.7425)
 
 [node name="Actors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
@@ -536,3 +527,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 499.723)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeBGM2Palace"]
 shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="oldebede" parent="." instance=ExtResource("33_q4slx")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -67.837, 13.127, 22.878)
+
+[node name="pot_1" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -70.3112, 13.127, 27.705)
+
+[node name="pot_2" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.5104)
+
+[node name="pot_3" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)

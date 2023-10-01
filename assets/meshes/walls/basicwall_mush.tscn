@@ -16,6 +16,7 @@ size = Vector3(0.547653, 5.19583, 10.7762)
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 5.236, 0)
+layers = 256
 material_override = SubResource("StandardMaterial3D_ra0g6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
