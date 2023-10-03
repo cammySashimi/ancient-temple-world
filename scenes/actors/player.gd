@@ -229,6 +229,11 @@ func _on_area_3d_area_entered(area):
 		run_boost += 0.2
 		world.bread_score += 1
 		area.owner.queue_free()
+		
+	elif area.owner.is_in_group("rushlight"):
+		$Head/OmniLight3D.omni_range += 1
+		$Head/OmniLight3D.light_energy += 0.2
+		area.owner.queue_free()
 	
 	elif area.owner.is_in_group("seal"):
 		if area.owner.is_in_group("seal_ostrich"):

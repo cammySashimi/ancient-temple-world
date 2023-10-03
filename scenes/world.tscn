@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=45 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cktcdm8jkyq17" path="res://assets/meshes/seals/seal_stabby.tscn" id="22_uhi8n"]
 [ext_resource type="PackedScene" uid="uid://eckipuwu4xip" path="res://assets/meshes/seals/seal_worship.tscn" id="23_uh5vy"]
 [ext_resource type="PackedScene" uid="uid://cm8lkgnfkd4a7" path="res://scenes/actors/folks/boat.tscn" id="27_856rc"]
+[ext_resource type="PackedScene" uid="uid://5dn4ofkckiqw" path="res://assets/meshes/items/rushlight.tscn" id="29_jwjvl"]
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
@@ -476,6 +477,21 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.0697, 0.819242, 17.
 [node name="Seal_Worship" parent="Actors/Courtyard/Seals" instance=ExtResource("23_uh5vy")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.4771, 0.919575, 18.459)
 
+[node name="Rushlights" type="Node3D" parent="Actors/Courtyard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.99271, 0.179277, 25.1655)
+
+[node name="rushlight" parent="Actors/Courtyard/Rushlights" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -28.3633, 0.0694027, 8.9696)
+
+[node name="rushlight2" parent="Actors/Courtyard/Rushlights" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -28.3633, 0.0694027, 6.73169)
+
+[node name="rushlight3" parent="Actors/Courtyard/Rushlights" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -31.3054, 0.0694027, 8.9696)
+
+[node name="rushlight4" parent="Actors/Courtyard/Rushlights" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -28.378, 0.14802, 12.9512)
+
 [node name="Bay" type="Node3D" parent="Actors"]
 
 [node name="Boat" parent="Actors/Bay" instance=ExtResource("27_856rc")]
@@ -546,4 +562,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)
 
 [node name="courtyard_house" parent="." instance=ExtResource("36_7fhuh")]
-transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.5742, 31.4384)
+transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.3102, 31.4384)
+
+[node name="rushlight" parent="courtyard_house" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(-0.0155323, 0, 0.1309, 0, 0.131818, 0, -0.1309, 0, -0.0155323, -0.610901, 1.21131, -7.18402)
