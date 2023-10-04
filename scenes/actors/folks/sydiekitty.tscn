@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dashffhneeqf" path="res://assets/meshes/import/actors/sydiekitty.glb" id="1_r4mth"]
 [ext_resource type="Texture2D" uid="uid://b34qvc3krx1a7" path="res://assets/textures/actors/sydiekitty.png" id="2_jw501"]
-[ext_resource type="Script" path="res://scenes/actors/folks/sydiekitty.gd" id="2_xngga"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_kgsqg"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_ua03t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jubic"]
@@ -24,7 +24,8 @@ points = PackedVector3Array(-0.0294796, -0.483704, -0.0270384, -0.44039, 0.50628
 
 [node name="sydiekitty" instance=ExtResource("1_r4mth")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-script = ExtResource("2_xngga")
+script = ExtResource("2_kgsqg")
+dialog_timeline = "kittytimeline"
 
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_ua03t")]
 rotation_speed = 0.0

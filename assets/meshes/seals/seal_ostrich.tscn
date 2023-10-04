@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d16a0gqn3cutm"]
+[gd_scene load_steps=7 format=3 uid="uid://d16a0gqn3cutm"]
 
 [ext_resource type="PackedScene" uid="uid://tv86eojhcj04" path="res://assets/meshes/import/items/seal.glb" id="1_bmbqq"]
-[ext_resource type="Script" path="res://scenes/actors/items/seal.gd" id="2_7wc4w"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_e8avu"]
 [ext_resource type="Texture2D" uid="uid://jdp03oonm6s1" path="res://assets/textures/items/seals/tex/seal_ostrich.png" id="3_yej0e"]
 [ext_resource type="Texture2D" uid="uid://bnj64lpktnxx7" path="res://assets/textures/items/seals/tex/seal_ostrich_normal.png" id="4_m6pio"]
@@ -17,7 +16,6 @@ radius = 0.624151
 
 [node name="Seal_Ostrich" groups=["seal", "seal_ostrich"] instance=ExtResource("1_bmbqq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("2_7wc4w")
 
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_e8avu")]
 

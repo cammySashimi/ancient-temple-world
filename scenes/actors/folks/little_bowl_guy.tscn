@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3x6vh0yx4g38"]
 
 [ext_resource type="Texture2D" uid="uid://dylcmtnyt4g6f" path="res://assets/textures/actors/little_bowl_guy.png" id="1_nqgs2"]
-[ext_resource type="Script" path="res://scenes/actors/folks/GuyTest.gd" id="2_rwtcj"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_nhgfo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rn88a"]
 height = 1.03674
@@ -12,7 +12,8 @@ pixel_size = 0.004
 billboard = 2
 shaded = true
 texture = ExtResource("1_nqgs2")
-script = ExtResource("2_rwtcj")
+script = ExtResource("2_nhgfo")
+dialog_timeline = "littleguytimeline"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

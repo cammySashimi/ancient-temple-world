@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsv8o3gho1kl0"]
+[gd_scene load_steps=7 format=3 uid="uid://dsv8o3gho1kl0"]
 
 [ext_resource type="PackedScene" uid="uid://tv86eojhcj04" path="res://assets/meshes/import/items/seal.glb" id="1_50vif"]
-[ext_resource type="Script" path="res://scenes/actors/items/seal.gd" id="2_atjm4"]
 [ext_resource type="Texture2D" uid="uid://l4vjylakjj3x" path="res://assets/textures/items/seals/tex/seal_beer.png" id="3_pio52"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_vywi8"]
 [ext_resource type="Texture2D" uid="uid://dhc6k6nqusgwl" path="res://assets/textures/items/seals/tex/seal_beer_normal.png" id="4_vuxaj"]
@@ -17,7 +16,6 @@ radius = 0.624151
 
 [node name="Seal_Beer" groups=["seal", "seal_beer"] instance=ExtResource("1_50vif")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("2_atjm4")
 
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_vywi8")]
 
