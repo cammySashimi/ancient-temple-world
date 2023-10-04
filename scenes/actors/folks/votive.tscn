@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://docuwnv52r2uc"]
 
 [ext_resource type="Texture2D" uid="uid://bj6gket1a11vm" path="res://assets/textures/actors/votive_1.png" id="1_psyeo"]
-[ext_resource type="Script" path="res://scenes/actors/folks/BiggerGuyTest2.gd" id="2_tghu6"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_2jnqu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pl5g5"]
 height = 1.72046
@@ -11,7 +11,8 @@ pixel_size = 0.004
 billboard = 2
 shaded = true
 texture = ExtResource("1_psyeo")
-script = ExtResource("2_tghu6")
+script = ExtResource("2_2jnqu")
+dialog_timeline = "guytimeline"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

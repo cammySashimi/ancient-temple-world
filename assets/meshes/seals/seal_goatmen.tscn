@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch25t21m8l30o"]
+[gd_scene load_steps=7 format=3 uid="uid://ch25t21m8l30o"]
 
 [ext_resource type="PackedScene" uid="uid://tv86eojhcj04" path="res://assets/meshes/import/items/seal.glb" id="1_kd2kn"]
-[ext_resource type="Script" path="res://scenes/actors/items/seal.gd" id="2_ut0a5"]
 [ext_resource type="Texture2D" uid="uid://m07k7qj46cge" path="res://assets/textures/items/seals/tex/seal_goatmen.png" id="3_rdelh"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_vb3ay"]
 [ext_resource type="Texture2D" uid="uid://dhohysckf60sl" path="res://assets/textures/items/seals/tex/seal_goatmen_normal.png" id="4_s7qlg"]
@@ -17,7 +16,6 @@ radius = 0.624151
 
 [node name="Seal_Goatmen" groups=["seal", "seal_goatmen"] instance=ExtResource("1_kd2kn")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("2_ut0a5")
 
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_vb3ay")]
 

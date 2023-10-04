@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds2ix1alqr7mi"]
+[gd_scene load_steps=7 format=3 uid="uid://ds2ix1alqr7mi"]
 
 [ext_resource type="PackedScene" uid="uid://cowb68rxceyhm" path="res://assets/meshes/import/items/beerurn.glb" id="1_8w2jv"]
-[ext_resource type="Script" path="res://scenes/actors/items/beer_urn.gd" id="2_k02tp"]
 [ext_resource type="Texture2D" uid="uid://bmpxx17kxx71b" path="res://assets/textures/items/beer_urn.png" id="2_ydb0v"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="3_485wf"]
 [ext_resource type="Texture2D" uid="uid://b8to58ek32mqm" path="res://assets/textures/items/beer_urn_normals.png" id="3_miyc1"]
@@ -25,7 +24,6 @@ points = PackedVector3Array(1.19122, -0.962025, 0.578404, -0.886787, -0.618932, 
 
 [node name="BeerUrn" groups=["beer_urn"] instance=ExtResource("1_8w2jv")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-script = ExtResource("2_k02tp")
 
 [node name="SinBob" parent="." index="0" instance=ExtResource("3_485wf")]
 

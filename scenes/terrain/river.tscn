@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy4fa0k5hj5uu"]
+[gd_scene load_steps=9 format=3 uid="uid://cy4fa0k5hj5uu"]
 
-[ext_resource type="Script" path="res://scenes/River.gd" id="1_78m53"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="2_mr17u"]
 [ext_resource type="Material" uid="uid://b2qw703iw1dr3" path="res://assets/materials/wet.tres" id="3_w5b17"]
 [ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="4_rtsb6"]
@@ -27,7 +26,6 @@ size = Vector3(15.692, 1, 30.9453)
 size = Vector3(123.935, 4.7195, 155.363)
 
 [node name="River" type="Node3D"]
-script = ExtResource("1_78m53")
 
 [node name="SinBob" parent="." instance=ExtResource("2_mr17u")]
 bob_amplitude = 0.5
