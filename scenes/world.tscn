@@ -598,3 +598,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 432.188, 13.1445, 499.723)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Music/FadeTriggers/Courtyard/FadeBGM2Palace"]
 shape = SubResource("BoxShape3D_ac5tq")
+
+[node name="oldebede" parent="." instance=ExtResource("33_q4slx")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -67.837, 13.127, 22.878)
+
+[node name="pot_1" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -70.3112, 13.127, 27.705)
+
+[node name="pot_2" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.5104)
+
+[node name="pot_3" parent="." instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)
+
+[node name="courtyard_house" parent="." instance=ExtResource("36_7fhuh")]
+transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.3102, 31.4384)
+
+[node name="rushlight" parent="courtyard_house" instance=ExtResource("29_jwjvl")]
+transform = Transform3D(-0.0155323, 0, 0.1309, 0, 0.131818, 0, -0.1309, 0, -0.0155323, -0.610901, 1.21131, -7.18402)
