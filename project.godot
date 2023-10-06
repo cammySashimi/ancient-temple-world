@@ -52,10 +52,10 @@ layout/styles={
 "box_size": "Vector2(600, 140)",
 "name_label_box_modulate": "Color(0.215686, 0.2, 0.168627, 0.843137)",
 "name_label_font": "\"res://assets/fonts/cune.ttf\"",
-"name_label_font_size": "22.0",
+"name_label_font_size": "38.0",
 "normal_font": "\"res://assets/fonts/cune.ttf\"",
 "portrait_stretch_factor": "0.0",
-"text_size": "22.0"
+"text_size": "38.0"
 },
 "inherits": "",
 "layout": "res://addons/dialogic/Modules/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
