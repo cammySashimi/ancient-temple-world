@@ -32,6 +32,7 @@ rotation_speed = 0.0
 
 [node name="mesh_id34" parent="root" index="0"]
 material_override = SubResource("StandardMaterial3D_jubic")
+visibility_range_end = 100.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="root/mesh_id34" index="0"]
 

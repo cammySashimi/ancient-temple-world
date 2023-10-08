@@ -21,7 +21,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_phbyf"]
-image = SubResource("Image_nj85x")
+image = SubResource("Image_yqmcv")
 
 [sub_resource type="Terrain3DTexture" id="Terrain3DTexture_d1x4a"]
 texture_id = 1

@@ -29,16 +29,21 @@ var run_boost = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Ancient blood rituals
-@onready var world = get_node("/root/World")
+@onready var world = get_node(global.world)
 
 @onready var head = get_node("Head")
 @onready var camera = get_node("Head/Camera3D")
 @onready var hand_l = get_node("Head/Camera3D/LeftHand")
 @onready var hand_r = get_node("Head/Camera3D/RightHand")
 
-@onready var ui = get_node("/root/World/UI")
-@onready var hand_curs = get_node("/root/World/UI/UICanvas/HandCursor")
-@onready var mouth_curs = get_node("/root/World/UI/UICanvas/MouthCursor")
+@onready var ui = get_node("/root/UI")
+@onready var hand_curs = get_node("/root/UI/UICanvas/HandCursor")
+@onready var mouth_curs = get_node("/root/UI/UICanvas/MouthCursor")
+
+@onready var viewport_container = get_node("/root/UI/SubViewportContainer")
+@onready var viewport = get_node("/root/UI/SubViewportContainer/SubViewport")
+
+var scale_factor: int = 1
 
 @onready var music_crossfade = $"../Music/CrossFade"
 
@@ -47,21 +52,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	# Capture mouse for first-person camera
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		if !global.game_paused:
-			# Rotate camera
-			head.rotate_y(-event.relative.x * look_sensitivity)
-			camera.rotate_x(-event.relative.y * look_sensitivity)
-			
-			# Clamp rotation
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-88), deg_to_rad(88))
 
 func _physics_process(delta):
 	
 	# Is there a dialog box open?
-	dialog = get_node_or_null("/root/World").dialog
+	dialog = get_node_or_null(global.world).dialog
+	
+	if Input.is_action_just_pressed("cycle_viewport_resolution"):
+		scale_factor = wrapi(scale_factor + 1, 1, 6)
+		viewport_container.stretch_shrink = scale_factor
 	
 	# Toggle fullscreen if button is pressed
 	if Input.is_action_just_pressed("toggle_fullscreen"):

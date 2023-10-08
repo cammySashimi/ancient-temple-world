@@ -1,7 +1,6 @@
 extends Control
 
-@onready var world = get_node("/root/World")
-
+@onready var world = $SubViewportContainer/SubViewport/World
 @onready var showfps = false
 
 @onready var pausebg = self.get_node("UICanvas/PauseBG")
@@ -14,6 +13,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Required to change the 3D viewport's size when the window is resized.
 	self.get_node("UICanvas/PauseBG").hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
