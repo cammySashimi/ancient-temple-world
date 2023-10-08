@@ -35,7 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://pulw6oun1c8i" path="res://assets/textures/actors/chair_guy_1.png" id="29_tuqep"]
 [ext_resource type="Texture2D" uid="uid://c5tpctmrtc12q" path="res://assets/textures/actors/chair_guy_2.png" id="30_xd4bt"]
 [ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
+[ext_resource type="PackedScene" uid="uid://crrc6qsu4re17" path="res://assets/meshes/scenery/sickle_sword.tscn" id="31_y4aaw"]
 [ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
+[ext_resource type="PackedScene" uid="uid://cpw0kycyyaj6m" path="res://scenes/actors/folks/phalanx.tscn" id="32_s20mx"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://cbtfnu8ol0xib" path="res://assets/meshes/scenery/oldebede.tscn" id="33_q4slx"]
 [ext_resource type="PackedScene" uid="uid://buad7wfa2yphx" path="res://assets/meshes/scenery/pot_1.tscn" id="35_y1blu"]
@@ -490,6 +492,18 @@ pixel_size = 0.002
 shaded = false
 texture = ExtResource("30_xd4bt")
 dialog_timeline = null
+
+[node name="MeanGuys" type="Node3D" parent="Places"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.503, 19.0006, -5.30811)
+
+[node name="sickle sword" parent="Places/MeanGuys" instance=ExtResource("31_y4aaw")]
+transform = Transform3D(-0.382008, 0, -5.04055, 0, 5.055, 0, 5.04055, 0, -0.382008, 4.35864, -5.89916, 0)
+
+[node name="sickle sword2" parent="Places/MeanGuys" instance=ExtResource("31_y4aaw")]
+transform = Transform3D(-0.210841, 1.13242e-08, -2.78202, -1.2151, 2.50981, 0.0920893, 2.50263, 1.21859, -0.189667, 4.35864, -5.89916, -13.9564)
+
+[node name="Phalanx" parent="Places/MeanGuys" instance=ExtResource("32_s20mx")]
+transform = Transform3D(-0.49354, 0, -0.667322, 0, 0.83, 0, 0.667322, 0, -0.49354, 9.15302, -4.24339, -6.32928)
 
 [node name="Terrain" type="Node3D" parent="."]
 
