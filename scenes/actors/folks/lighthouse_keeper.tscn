@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://q8he3ldp5ird"]
+
+[ext_resource type="Texture2D" uid="uid://bdt0rsbvrllmi" path="res://assets/textures/actors/skirt_guy_1.png" id="1_i042j"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_vdpl7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pl5g5"]
+height = 1.72046
+
+[node name="Lighthouse Keeper" type="Sprite3D"]
+visibility_range_end = 100.0
+pixel_size = 0.004
+billboard = 2
+shaded = true
+texture = ExtResource("1_i042j")
+script = ExtResource("2_vdpl7")
+dialog_timeline = "guytimeline"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_pl5g5")

@@ -8,6 +8,7 @@
 size = Vector3(1.7, 1.7, 1.7)
 
 [node name="Boat" type="Sprite3D"]
+visibility_range_end = 500.0
 pixel_size = 0.004
 billboard = 2
 shaded = true

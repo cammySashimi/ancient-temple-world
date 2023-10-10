@@ -57,12 +57,15 @@ points = PackedVector3Array(-1.48136, 0, -2.39038, 1.43968, 1.2412, 2.28329, 1.4
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="Platform" parent="." index="0"]
+visibility_range_end = 100.0
 mesh = SubResource("ArrayMesh_syjd5")
 
 [node name="Frame" parent="." index="1"]
+visibility_range_end = 100.0
 mesh = SubResource("ArrayMesh_83ogq")
 
 [node name="Legs" parent="." index="2"]
+visibility_range_end = 100.0
 surface_material_override/0 = ExtResource("2_ohpb8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]

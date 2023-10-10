@@ -93,6 +93,7 @@ shadow_mesh = SubResource("ArrayMesh_grpke")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Trunk" parent="." index="0"]
+visibility_range_end = 200.0
 mesh = SubResource("ArrayMesh_7tlqa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trunk" index="0"]
@@ -106,4 +107,5 @@ transform = Transform3D(0.93358, -0.358368, 0, 0.358027, 0.932692, -0.0436194, 0
 shape = SubResource("CylinderShape3D_b0r6w")
 
 [node name="Leaves" parent="." index="1"]
+visibility_range_end = 200.0
 mesh = SubResource("ArrayMesh_2c62k")
