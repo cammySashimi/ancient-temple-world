@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=55 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -45,6 +45,8 @@
 [ext_resource type="PackedScene" uid="uid://q8he3ldp5ird" path="res://scenes/actors/folks/lighthouse_keeper.tscn" id="37_cf1w2"]
 [ext_resource type="PackedScene" uid="uid://dd5am4ros4lxa" path="res://scenes/actors/folks/lighthouse_sign.tscn" id="37_xajfo"]
 [ext_resource type="Resource" path="res://dialog/timelines/lighthouse_keeper.dtl" id="38_otk0m"]
+[ext_resource type="PackedScene" uid="uid://bdjjnqp1r2isl" path="res://assets/meshes/scenery/tent.tscn" id="38_ufuit"]
+[ext_resource type="PackedScene" uid="uid://7ipwo27phdfp" path="res://assets/meshes/scenery/oil_lamp.tscn" id="39_7mkqb"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
 resource_name = "BGM2Cavern"
@@ -226,7 +228,7 @@ bake_mask = 4293918721
 bake_simplification_distance = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_gjtjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.743, 6.98422, 396.555)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -314.662, 44.6232, 158.624)
 floor_max_angle = 1.0472
 jump_velocity = 8
 
@@ -489,12 +491,6 @@ dialog_timeline = null
 [node name="MeanGuys" type="Node3D" parent="Places"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.503, 19.0006, -5.30811)
 
-[node name="sickle sword" parent="Places/MeanGuys" instance=ExtResource("31_y4aaw")]
-transform = Transform3D(-0.382008, 0, -5.04055, 0, 5.055, 0, 5.04055, 0, -0.382008, 4.35864, -5.89916, 0)
-
-[node name="sickle sword2" parent="Places/MeanGuys" instance=ExtResource("31_y4aaw")]
-transform = Transform3D(-0.210841, 1.13242e-08, -2.78202, -1.2151, 2.50981, 0.0920893, 2.50263, 1.21859, -0.189667, 4.35864, -5.89916, -13.9564)
-
 [node name="Phalanx" parent="Places/MeanGuys" instance=ExtResource("32_s20mx")]
 transform = Transform3D(-0.49354, 0, -0.667322, 0, 0.83, 0, 0.667322, 0, -0.49354, 9.15302, -4.24339, -6.32928)
 dialog_timeline = ExtResource("35_7kegq")
@@ -539,6 +535,22 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 120.07, 6.3801, 414.669
 
 [node name="pot_3" parent="Places/Lighthouse/Scenery/Pots" instance=ExtResource("35_y1blu")]
 transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.2, 118.544, 6.3801, 415.683)
+
+[node name="BanditCamp" type="Node3D" parent="Places"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.063, 45.9058, 177.336)
+
+[node name="Scenery" type="Node3D" parent="Places/BanditCamp"]
+
+[node name="tent" parent="Places/BanditCamp/Scenery" instance=ExtResource("38_ufuit")]
+transform = Transform3D(-0.0622776, 0.0161152, 0.189372, 0.0173574, 0.198929, -0.0112203, -0.189262, 0.0129411, -0.0633428, 5.47755, -4.88127, 6.88281)
+
+[node name="OilLamp" parent="Places/BanditCamp/Scenery" instance=ExtResource("39_7mkqb")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.7094, -4.61593, 8.67871)
+
+[node name="Votive2" parent="Places/BanditCamp" instance=ExtResource("11_igiah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89435, -3.81362, 6.56598)
+modulate = Color(0.568627, 0.647059, 0.745098, 1)
+shaded = false
 
 [node name="Terrain" type="Node3D" parent="."]
 
