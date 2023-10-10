@@ -9,6 +9,9 @@ radius = 0.7675
 [node name="sickle sword" instance=ExtResource("1_b65b4")]
 transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 0, 0, 0)
 
+[node name="Cube" parent="." index="0"]
+visibility_range_end = 100.0
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]

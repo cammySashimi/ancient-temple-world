@@ -1,18 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://docuwnv52r2uc"]
+[gd_scene load_steps=5 format=3 uid="uid://docuwnv52r2uc"]
 
 [ext_resource type="Texture2D" uid="uid://bj6gket1a11vm" path="res://assets/textures/actors/votive_1.png" id="1_psyeo"]
 [ext_resource type="Script" path="res://scripts/talkable.gd" id="2_2jnqu"]
+[ext_resource type="Resource" path="res://dialog/timelines/guytimeline.dtl" id="3_oevh7"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pl5g5"]
 height = 1.72046
 
 [node name="Votive" type="Sprite3D"]
+visibility_range_end = 100.0
 pixel_size = 0.004
 billboard = 2
 shaded = true
 texture = ExtResource("1_psyeo")
 script = ExtResource("2_2jnqu")
-dialog_timeline = "guytimeline"
+dialog_timeline = ExtResource("3_oevh7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

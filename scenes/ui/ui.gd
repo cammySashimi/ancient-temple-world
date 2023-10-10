@@ -11,16 +11,21 @@ extends Control
 @onready var breadcounter = self.get_node("UICanvas/PauseBG/Icons/BreadIcon/BreadScore")
 #@onready var code = self.get_node("UICanvas/Code")
 
+var urntotal
+var breadtotal
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Required to change the 3D viewport's size when the window is resized.
 	self.get_node("UICanvas/PauseBG").hide()
+	urntotal = get_tree().get_nodes_in_group("beer_urn").size()
+	breadtotal = get_tree().get_nodes_in_group("ancient_bread").size()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Update urn counter text
-	urncounter.text = str(world.urn_score)
-	breadcounter.text = str(world.bread_score)
+	urncounter.text = str(world.urn_score) + "/" + str(urntotal)
+	breadcounter.text = str(world.bread_score) + "/" + str(breadtotal)
 	
 	if Input.is_action_just_pressed("fps_toggle"):
 		if showfps:

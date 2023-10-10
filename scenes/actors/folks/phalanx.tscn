@@ -5,9 +5,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhj25"]
 radius = 1.93346
-height = 10.435
+height = 8.69673
 
 [node name="Phalanx" type="Sprite3D"]
+visibility_range_end = 100.0
 pixel_size = 0.008
 shaded = true
 texture = ExtResource("1_54oxi")
@@ -17,5 +18,5 @@ dialog_timeline = "phalanx"
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.0682191, 0)
 shape = SubResource("CapsuleShape3D_dhj25")

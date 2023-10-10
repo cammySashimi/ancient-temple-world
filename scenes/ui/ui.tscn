@@ -261,8 +261,9 @@ tooltip_text = "Ancient Cloudy Beer Collected"
 texture = ExtResource("8_e87r2")
 
 [node name="UrnScore" type="Label" parent="UICanvas/PauseBG/Icons/UrnIcon"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
-offset_left = -158.0
+offset_left = -435.0
 offset_top = 3.0
 offset_right = -35.0
 offset_bottom = 127.0
@@ -286,8 +287,9 @@ tooltip_text = "Ancient Carbonized Bread Collected"
 texture = ExtResource("9_2w6qt")
 
 [node name="BreadScore" type="Label" parent="UICanvas/PauseBG/Icons/BreadIcon"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
-offset_left = -143.0
+offset_left = -420.0
 offset_top = -15.0
 offset_right = -20.0
 offset_bottom = 109.0

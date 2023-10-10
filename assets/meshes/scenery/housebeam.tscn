@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c34n4t7ohpns4"]
+
+[ext_resource type="PackedScene" uid="uid://bl3oh21jqwas" path="res://assets/meshes/import/scenery/housebeam.glb" id="1_0ixuv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ge741"]
+size = Vector3(1.40365, 0.572101, 0.575457)
+
+[node name="housebeam" instance=ExtResource("1_0ixuv")]
+
+[node name="Cylinder" parent="." index="0"]
+visibility_range_end = 100.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_ge741")

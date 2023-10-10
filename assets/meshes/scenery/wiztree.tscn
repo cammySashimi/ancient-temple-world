@@ -100,6 +100,9 @@ points = PackedVector3Array(-3.43768, 6.44657, -2.47629, -10.7941, 6.44679, -8.3
 
 [node name="WIZTREE" instance=ExtResource("1_2xpfx")]
 
+[node name="Icosphere" parent="." index="0"]
+visibility_range_end = 200.0
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Icosphere" index="0"]
 
 [node name="@CollisionShape3D@30478" type="CollisionShape3D" parent="Icosphere/StaticBody3D" index="0"]

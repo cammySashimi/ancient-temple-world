@@ -9,6 +9,12 @@ radius = 3.2839
 [node name="rushlight" groups=["rushlight"] instance=ExtResource("1_gfgyn")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.000287592, 0.00379682, -0.00278401)
 
+[node name="Cylinder" parent="." index="0"]
+visibility_range_end = 100.0
+
+[node name="Cylinder_001" parent="." index="1"]
+visibility_range_end = 100.0
+
 [node name="Area3D" type="Area3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
@@ -19,12 +25,14 @@ shape = SubResource("SphereShape3D_48iv2")
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -0.934164, 5.1028, 0)
 light_color = Color(0.745098, 0.419608, 0.141176, 1)
 light_energy = 2.177
+distance_fade_enabled = true
 omni_range = 0.494
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." index="4"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -1.61844, 5.89143, 0)
 light_color = Color(0.745098, 0.419608, 0.141176, 1)
 light_energy = 1.046
+distance_fade_enabled = true
 omni_range = 0.366
 
 [node name="SinBob" parent="." index="5" groups=["rushlight"] instance=ExtResource("3_83foy")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=53 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -18,12 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://ssgtb4xjc3dj" path="res://assets/meshes/scenery/brazier.tscn" id="13_oe6pc"]
 [ext_resource type="PackedScene" uid="uid://cipf64i8ej278" path="res://scenes/terrain/courtyard/coutyard_walls.tscn" id="14_tegd4"]
 [ext_resource type="PackedScene" uid="uid://ds2ix1alqr7mi" path="res://assets/meshes/items/beer_urn.tscn" id="14_x44m3"]
-[ext_resource type="Resource" path="res://dialog/timelines/littleguytimeline.dtl" id="15_fl4wl"]
 [ext_resource type="PackedScene" uid="uid://di1maillo2e67" path="res://scenes/terrain/courtyard/coutyard_walls_upper.tscn" id="15_kc3o0"]
 [ext_resource type="PackedScene" uid="uid://d16a0gqn3cutm" path="res://assets/meshes/seals/seal_ostrich.tscn" id="15_kfyj1"]
 [ext_resource type="PackedScene" uid="uid://dsv8o3gho1kl0" path="res://assets/meshes/seals/seal_beer.tscn" id="16_rj3me"]
 [ext_resource type="PackedScene" uid="uid://cikb5cqw8wjvf" path="res://assets/meshes/seals/seal_dragons.tscn" id="17_eyx4v"]
-[ext_resource type="Resource" path="res://dialog/timelines/guytimeline.dtl" id="17_jtnfj"]
 [ext_resource type="PackedScene" uid="uid://ch25t21m8l30o" path="res://assets/meshes/seals/seal_goatmen.tscn" id="18_epigq"]
 [ext_resource type="PackedScene" uid="uid://doms5gmgjymry" path="res://assets/meshes/seals/seal_goats.tscn" id="19_6hbif"]
 [ext_resource type="Resource" path="res://dialog/timelines/kittytimeline.dtl" id="19_pjfjq"]
@@ -40,8 +38,13 @@
 [ext_resource type="PackedScene" uid="uid://cpw0kycyyaj6m" path="res://scenes/actors/folks/phalanx.tscn" id="32_s20mx"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://cbtfnu8ol0xib" path="res://assets/meshes/scenery/oldebede.tscn" id="33_q4slx"]
+[ext_resource type="Resource" path="res://dialog/timelines/phalanx.dtl" id="35_7kegq"]
 [ext_resource type="PackedScene" uid="uid://buad7wfa2yphx" path="res://assets/meshes/scenery/pot_1.tscn" id="35_y1blu"]
 [ext_resource type="PackedScene" uid="uid://3ray4yjni14g" path="res://assets/meshes/scenery/courtyard_house.tscn" id="36_7fhuh"]
+[ext_resource type="PackedScene" uid="uid://jlpgqe5ib5wg" path="res://assets/meshes/scenery/lighthouse.tscn" id="36_8ii16"]
+[ext_resource type="PackedScene" uid="uid://q8he3ldp5ird" path="res://scenes/actors/folks/lighthouse_keeper.tscn" id="37_cf1w2"]
+[ext_resource type="PackedScene" uid="uid://dd5am4ros4lxa" path="res://scenes/actors/folks/lighthouse_sign.tscn" id="37_xajfo"]
+[ext_resource type="Resource" path="res://dialog/timelines/lighthouse_keeper.dtl" id="38_otk0m"]
 
 [sub_resource type="Animation" id="Animation_dwjra"]
 resource_name = "BGM2Cavern"
@@ -223,10 +226,9 @@ bake_mask = 4293918721
 bake_simplification_distance = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_gjtjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.8018, 13.5564, 20.2135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.743, 6.98422, 396.555)
 floor_max_angle = 1.0472
-run_speed = 30.0
-jump_velocity = 12
+jump_velocity = 8
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -248,99 +250,17 @@ environment = ExtResource("4_1vrg3")
 [node name="Courtyard" type="Node3D" parent="Places"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
 
-[node name="Scenery" type="Node3D" parent="Places/Courtyard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1403, -13.0576, 4.79578)
-
-[node name="Braziers" type="Node3D" parent="Places/Courtyard/Scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1359, 13.0813, -4.79089)
-
-[node name="Brazier" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
-
-[node name="Brazier2" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
-
-[node name="Brazier14" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 65.3664, -1.81578, 36.296)
-
-[node name="Brazier3" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, -3.22758)
-
-[node name="Brazier4" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.9133, 9.53674e-07, -3.22758)
-
-[node name="Brazier5" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.49708, 9.53674e-07, 44.8378)
-
-[node name="Brazier10" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 27.6681)
-
-[node name="Brazier11" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 14.6697)
-
-[node name="Brazier12" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 27.6681)
-
-[node name="Brazier13" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 14.6697)
-
-[node name="Brazier6" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.2834, 9.53674e-07, 44.8378)
-
-[node name="Brazier7" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, 44.8378)
-
-[node name="Brazier8" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.8814, 9.53674e-07, 44.8378)
-
-[node name="Brazier9" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.55048, -3.6123, 5.39521)
-
-[node name="Floors" type="Node3D" parent="Places/Courtyard/Scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
-
-[node name="CourtyardFloors" parent="Places/Courtyard/Scenery/Floors" instance=ExtResource("13_0ijer")]
-
-[node name="Walls" type="Node3D" parent="Places/Courtyard/Scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
-
-[node name="CourtyardWalls" parent="Places/Courtyard/Scenery/Walls" instance=ExtResource("14_tegd4")]
-
-[node name="CourtyardWallsUpper" parent="Places/Courtyard/Scenery/Walls" instance=ExtResource("15_kc3o0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.196, 0)
-
-[node name="CityWall" type="Node3D" parent="Places/Courtyard/Scenery/Walls"]
-
-[node name="oldebede" parent="Places/Courtyard/Scenery" instance=ExtResource("33_q4slx")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -67.837, 13.127, 22.878)
-
-[node name="pot_1" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -70.3112, 13.127, 27.705)
-
-[node name="pot_2" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.5104)
-
-[node name="pot_3" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)
-
-[node name="courtyard_house" parent="Places/Courtyard/Scenery" instance=ExtResource("36_7fhuh")]
-transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.5742, 31.4384)
-
 [node name="Actors" type="Node3D" parent="Places/Courtyard"]
 
 [node name="LittleBowlGuy" parent="Places/Courtyard/Actors" instance=ExtResource("9_vj0on")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43228, 0.44928, 3.70416)
-visibility_range_end = 100.0
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 shaded = false
-dialog_timeline = ExtResource("15_fl4wl")
 
 [node name="Votive" parent="Places/Courtyard/Actors" instance=ExtResource("11_igiah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2419, 0.975175, 6.54047)
-visibility_range_end = 100.0
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 shaded = false
-dialog_timeline = ExtResource("17_jtnfj")
 
 [node name="SydieKitty" parent="Places/Courtyard/Actors" instance=ExtResource("10_pxyxc")]
 transform = Transform3D(1.19099, 0, -1.60672, 0, 2, 0, 1.60672, 0, 1.19099, 11.9194, 11.0721, -6.21942)
@@ -427,7 +347,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -14.4625, 0.801108, 
 
 [node name="Seals" type="Node3D" parent="Places/Courtyard/Items"]
 
-[node name="OstrichSeal" parent="Places/Courtyard/Items/Seals" instance=ExtResource("15_kfyj1")]
+[node name="Seal_Ostrich" parent="Places/Courtyard/Items/Seals" instance=ExtResource("15_kfyj1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -6.54941, 1.14167, 12.4675)
 
 [node name="Seal_Beer" parent="Places/Courtyard/Items/Seals" instance=ExtResource("16_rj3me")]
@@ -445,14 +365,89 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -17.1146, 1.06977, 19.2
 [node name="Seal_Rollercoaster" parent="Places/Courtyard/Items/Seals" instance=ExtResource("20_03aso")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.3242, 1.06915, 16.0943)
 
-[node name="Seal_Sitman" parent="Places/Courtyard/Items/Seals" instance=ExtResource("21_0txco")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.3353, 1.15754, 25.5563)
-
 [node name="Seal_Stabby" parent="Places/Courtyard/Items/Seals" instance=ExtResource("22_uhi8n")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.0697, 0.819242, 17.7577)
 
 [node name="Seal_Worship" parent="Places/Courtyard/Items/Seals" instance=ExtResource("23_uh5vy")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.4771, 0.919575, 18.459)
+
+[node name="Scenery" type="Node3D" parent="Places/Courtyard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1403, -13.0576, 4.79578)
+
+[node name="Braziers" type="Node3D" parent="Places/Courtyard/Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1359, 13.0813, -4.79089)
+
+[node name="Brazier" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.46525, 9.53674e-07, -3.22758)
+
+[node name="Brazier2" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.31523, 9.53674e-07, -3.22758)
+
+[node name="Brazier14" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 65.3664, -1.81578, 36.296)
+
+[node name="Brazier3" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, -3.22758)
+
+[node name="Brazier4" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.9133, 9.53674e-07, -3.22758)
+
+[node name="Brazier5" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.49708, 9.53674e-07, 44.8378)
+
+[node name="Brazier10" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 27.6681)
+
+[node name="Brazier11" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.45391, 9.53674e-07, 14.6697)
+
+[node name="Brazier12" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 27.6681)
+
+[node name="Brazier13" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -38.0374, 9.53674e-07, 14.6697)
+
+[node name="Brazier6" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.2834, 9.53674e-07, 44.8378)
+
+[node name="Brazier7" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.0787, 9.53674e-07, 44.8378)
+
+[node name="Brazier8" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -30.8814, 9.53674e-07, 44.8378)
+
+[node name="Brazier9" parent="Places/Courtyard/Scenery/Braziers" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.55048, -3.6123, 5.39521)
+
+[node name="Floors" type="Node3D" parent="Places/Courtyard/Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
+
+[node name="CourtyardFloors" parent="Places/Courtyard/Scenery/Floors" instance=ExtResource("13_0ijer")]
+
+[node name="Walls" type="Node3D" parent="Places/Courtyard/Scenery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
+
+[node name="CourtyardWalls" parent="Places/Courtyard/Scenery/Walls" instance=ExtResource("14_tegd4")]
+
+[node name="CourtyardWallsUpper" parent="Places/Courtyard/Scenery/Walls" instance=ExtResource("15_kc3o0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.196, 0)
+
+[node name="CityWall" type="Node3D" parent="Places/Courtyard/Scenery/Walls"]
+
+[node name="oldebede" parent="Places/Courtyard/Scenery" instance=ExtResource("33_q4slx")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -67.837, 13.127, 22.878)
+
+[node name="pot_1" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -70.3112, 13.127, 27.705)
+
+[node name="pot_2" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -69.366, 13.127, 29.5104)
+
+[node name="pot_3" parent="Places/Courtyard/Scenery" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -71.9434, 13.127, 30.2491)
+
+[node name="courtyard_house" parent="Places/Courtyard/Scenery" instance=ExtResource("36_7fhuh")]
+transform = Transform3D(-0.129615, 0, -1.09234, 0, 1.1, 0, 1.09234, 0, -0.129615, 0.217896, 14.5742, 31.4384)
 
 [node name="Bay" type="Node3D" parent="Places"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.991, 13.0576, 0)
@@ -477,7 +472,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -9.33984, 13.9003, -12.
 
 [node name="ChairGuy1" parent="Places/LittleHouse/Actors" instance=ExtResource("9_vj0on")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98602, 15.337, -13.8141)
-visibility_range_end = 100.0
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 pixel_size = 0.002
 shaded = false
@@ -486,7 +480,6 @@ dialog_timeline = null
 
 [node name="ChairGuy2" parent="Places/LittleHouse/Actors" instance=ExtResource("9_vj0on")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98602, 15.337, -14.3815)
-visibility_range_end = 100.0
 modulate = Color(0.568627, 0.647059, 0.745098, 1)
 pixel_size = 0.002
 shaded = false
@@ -504,6 +497,48 @@ transform = Transform3D(-0.210841, 1.13242e-08, -2.78202, -1.2151, 2.50981, 0.09
 
 [node name="Phalanx" parent="Places/MeanGuys" instance=ExtResource("32_s20mx")]
 transform = Transform3D(-0.49354, 0, -0.667322, 0, 0.83, 0, 0.667322, 0, -0.49354, 9.15302, -4.24339, -6.32928)
+dialog_timeline = ExtResource("35_7kegq")
+
+[node name="Lighthouse" type="Node3D" parent="Places"]
+
+[node name="Actors" type="Node3D" parent="Places/Lighthouse"]
+
+[node name="Lighthouse Sign" parent="Places/Lighthouse/Actors" instance=ExtResource("37_xajfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.498, 6.8782, 401.34)
+pixel_size = 0.0025
+
+[node name="Lighthouse Keeper" parent="Places/Lighthouse/Actors" instance=ExtResource("37_cf1w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.884, 35.1715, 411.761)
+modulate = Color(0.890196, 0.756863, 0.643137, 1)
+shaded = false
+dialog_timeline = ExtResource("38_otk0m")
+
+[node name="Items" type="Node3D" parent="Places/Lighthouse"]
+
+[node name="Seal_Sitman" parent="Places/Lighthouse/Items" instance=ExtResource("21_0txco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 113.539, 36.2358, 409.206)
+
+[node name="Scenery" type="Node3D" parent="Places/Lighthouse"]
+
+[node name="lighthouse" parent="Places/Lighthouse/Scenery" instance=ExtResource("36_8ii16")]
+transform = Transform3D(4.25, 0, 0, 0, 4.25, 0, 0, 0, 4.25, 113.569, 6.36065, 409.176)
+
+[node name="brazier" parent="Places/Lighthouse/Scenery" instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 113.628, 6.27083, 409.162)
+
+[node name="sickle sword" parent="Places/Lighthouse/Scenery" instance=ExtResource("31_y4aaw")]
+transform = Transform3D(0.045288, 0.0195822, 0.0415425, -0.0144306, 0.0614555, -0.0132371, -0.0436005, 0, 0.0475316, 120.033, 6.69309, 414.646)
+
+[node name="Pots" type="Node3D" parent="Places/Lighthouse/Scenery"]
+
+[node name="pot_1" parent="Places/Lighthouse/Scenery/Pots" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 119.623, 6.3801, 415.476)
+
+[node name="pot_2" parent="Places/Lighthouse/Scenery/Pots" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 120.07, 6.3801, 414.669)
+
+[node name="pot_3" parent="Places/Lighthouse/Scenery/Pots" instance=ExtResource("35_y1blu")]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.2, 118.544, 6.3801, 415.683)
 
 [node name="Terrain" type="Node3D" parent="."]
 
