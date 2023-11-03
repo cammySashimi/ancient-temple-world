@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cywcs03w2bu5e"]
+
+[ext_resource type="PackedScene" uid="uid://bw3kb1lq0gk67" path="res://assets/meshes/import/scenery/brb.glb" id="1_j28yy"]
+[ext_resource type="Texture2D" uid="uid://cn1f8mwwpdt6b" path="res://assets/textures/scenery/brb_texture.png" id="2_r27lk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yibk3"]
+albedo_texture = ExtResource("2_r27lk")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pmfyv"]
+points = PackedVector3Array(-0.0299285, 0.869352, 0.943179, -0.087651, 0.770506, -0.893168, -0.0906321, 0.841319, -0.924462, 0.977778, 0.845728, -0.0799128, -0.262846, 0.0114186, 0.245874, -0.97627, 0.845138, 0.103123, 0.352763, 0.00820838, -0.0169554, -0.261928, 0.0129979, -0.249389, 0.699008, 0.843718, 0.710514, 0.317411, 0.955858, -0.750677, -0.729279, 0.843715, -0.656843, 0.377035, 0.768355, -0.857557, -0.699308, 0.843985, 0.711182, 0.349231, 0.955858, 0.709386, 0.145064, 0.0142096, 0.33149, -0.754271, 0.93152, -0.319939, 0.175223, 0.0109643, -0.309032, 0.915648, 0.845363, -0.385152, -0.0296866, 0.806488, 0.96573, 0.793527, 0.955858, -0.0521646, -0.747619, 0.927396, 0.340853, 0.916512, 0.845723, 0.286392, -0.35131, 0.0394029, -0.133975, -0.425758, 0.844052, 0.893842, -0.145291, 0.0135056, 0.331967, -0.918578, 0.846583, 0.378948, -0.332481, 0.932261, -0.74376, -0.352248, 0.772105, -0.839119, -0.029514, 0.00471577, -0.343268, -0.818685, 0.741572, -0.338421, -0.329914, 0.928645, 0.761518, 0.261334, 0.0137073, 0.244766)
+
+[node name="brb" instance=ExtResource("1_j28yy")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="bevel_rim_bowl" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_yibk3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bevel_rim_bowl" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bevel_rim_bowl/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_pmfyv")

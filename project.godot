@@ -59,6 +59,23 @@ layout/styles={
 },
 "inherits": "",
 "layout": "res://addons/dialogic/Modules/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
+},
+"LittleStyle": {
+"export_overrides": {
+"box_animation_in": "0",
+"box_animation_new_text": "0",
+"box_animation_out": "0",
+"box_modulate": "Color(0.294118, 0.25098, 0.211765, 1)",
+"box_size": "Vector2(800, 220)",
+"name_label_box_modulate": "Color(0.215686, 0.2, 0.168627, 0.843137)",
+"name_label_font": "\"res://assets/fonts/cune.ttf\"",
+"name_label_font_size": "24.0",
+"normal_font": "\"res://assets/fonts/cune.ttf\"",
+"portrait_stretch_factor": "0.0",
+"text_size": "12.0"
+},
+"inherits": "",
+"layout": "res://addons/dialogic/Modules/DefaultLayouts/Default/DialogicDefaultLayout.tscn"
 }
 }
 layout/default_style="Default"

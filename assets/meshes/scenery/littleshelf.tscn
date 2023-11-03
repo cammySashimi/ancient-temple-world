@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxa4jk7osxhtd"]
+
+[ext_resource type="PackedScene" uid="uid://ph2tho482ex" path="res://assets/meshes/import/scenery/littleshelf.glb" id="1_qqi6x"]
+[ext_resource type="Texture2D" uid="uid://ch314by27pk3b" path="res://assets/textures/scenery/littleshelf_texture.png" id="2_kxh3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0j6a"]
+albedo_texture = ExtResource("2_kxh3m")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hqoum"]
+points = PackedVector3Array(1, 0.203552, 1.18738, 1, -0.203679, 1.18738, 1, 0.203552, -1.18738, -1, 0.203552, 1.18738, -1, -0.504269, 1.18738, 1, -0.203679, -1.18738, -1, 0.203552, -1.18738, -1, -0.504269, -1.18738)
+
+[node name="littleshelf" instance=ExtResource("1_qqi6x")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Cube" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_r0j6a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hqoum")

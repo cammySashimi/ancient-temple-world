@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c03oc3msopxb7"]
+
+[ext_resource type="Texture2D" uid="uid://hf5qj4c2u2sy" path="res://assets/textures/scenery/basket_watermelons_melon_texture.png" id="1_72qpf"]
+
+[resource]
+albedo_texture = ExtResource("1_72qpf")

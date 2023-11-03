@@ -40,11 +40,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var hand_curs = get_node("/root/UI/UICanvas/HandCursor")
 @onready var mouth_curs = get_node("/root/UI/UICanvas/MouthCursor")
 
-@onready var viewport_container = get_node("/root/UI/SubViewportContainer")
-@onready var viewport = get_node("/root/UI/SubViewportContainer/SubViewport")
-
-var scale_factor: int = 1
-
 @onready var music_crossfade = $"../Music/CrossFade"
 
 @onready var home_position = position
@@ -57,18 +52,6 @@ func _physics_process(delta):
 	
 	# Is there a dialog box open?
 	dialog = get_node_or_null(global.world).dialog
-	
-	if Input.is_action_just_pressed("cycle_viewport_resolution"):
-		scale_factor = wrapi(scale_factor + 1, 1, 6)
-		viewport_container.stretch_shrink = scale_factor
-	
-	# Toggle fullscreen if button is pressed
-	if Input.is_action_just_pressed("toggle_fullscreen"):
-		var mode = DisplayServer.window_get_mode()
-		if mode == DisplayServer.WINDOW_MODE_WINDOWED:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 		# Close textbox if we gotta
 	if interacting_with:
@@ -113,7 +96,7 @@ func _physics_process(delta):
 			_get_clicked()
 
 		# Warp home if we press the button or are falling into the void
-		if Input.is_action_just_pressed("warp_home") or position.y < -500:
+		if Input.is_action_just_pressed("warp_home"):
 			position = home_position
 		
 		# Open menu if we gotta
@@ -237,21 +220,30 @@ func _on_area_3d_area_entered(area):
 	elif area.owner.is_in_group("seal"):
 		if area.owner.is_in_group("seal_ostrich"):
 			world.seals[0] = true
+			world.sealwarp[0] = position
 		elif area.owner.is_in_group("seal_stabby"):
 			world.seals[1] = true
+			world.sealwarp[1] = position
 		elif area.owner.is_in_group("seal_goatmen"):
 			world.seals[2] = true
+			world.sealwarp[2] = position
 		elif area.owner.is_in_group("seal_worship"):
 			world.seals[3] = true
+			world.sealwarp[3] = position
 		elif area.owner.is_in_group("seal_sitman"):
 			world.seals[4] = true
+			world.sealwarp[4] = position
 		elif area.owner.is_in_group("seal_dragons"):
 			world.seals[5] = true
+			world.sealwarp[5] = position
 		elif area.owner.is_in_group("seal_beer"):
 			world.seals[6] = true
+			world.sealwarp[6] = position
 		elif area.owner.is_in_group("seal_goats"):
 			world.seals[7] = true
+			world.sealwarp[7] = position
 		elif area.owner.is_in_group("seal_rollercoaster"):
 			world.seals[8] = true
+			world.sealwarp[8] = position
 		
 		area.owner.queue_free()
