@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://4jte67fn4joo"]
+
+[ext_resource type="PackedScene" uid="uid://b1qqsco8v5cyn" path="res://assets/meshes/import/scenery/basicstair.glb" id="1_uf17v"]
+[ext_resource type="Texture2D" uid="uid://c2lasiafvkyeu" path="res://assets/textures/scenery/basicstair.png" id="2_l4q3a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_441qg"]
+albedo_texture = ExtResource("2_l4q3a")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_id5yg"]
+points = PackedVector3Array(1, -0.600039, 2, -1, -0.600039, 2, 1, -1, 2, 1, 1, -1.20008, -1, -1, 2, -1, 1, -1.20008, 1, -1, -2, 1, 1, -2, -1, -1, -2, -1, 1, -2)
+
+[node name="basicstair" instance=ExtResource("1_uf17v")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_441qg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_id5yg")

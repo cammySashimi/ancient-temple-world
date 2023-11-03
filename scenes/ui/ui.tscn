@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://s8hdmbf8i7q1"]
+[gd_scene load_steps=26 format=3 uid="uid://s8hdmbf8i7q1"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_4hv53"]
 [ext_resource type="Script" path="res://scenes/ui/FPSMeter.gd" id="1_25er0"]
@@ -19,6 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://b81g24kpayxl0" path="res://assets/textures/items/seals/ui/seal_rollercoaster_ui.png" id="15_7fg18"]
 [ext_resource type="PackedScene" uid="uid://c7wxxd4eobnjt" path="res://scenes/world.tscn" id="18_2h6oo"]
 [ext_resource type="Script" path="res://scenes/ui/viewport.gd" id="19_evdjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb4vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yevu3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cepos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xko7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6dof"]
 
 [sub_resource type="Theme" id="Theme_18vrf"]
 default_font = ExtResource("7_mlbvj")
@@ -89,6 +99,17 @@ text = "Ancient Temple World"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="Warps" type="Label" parent="UICanvas/PauseBG"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 679.0
+offset_right = 494.0
+offset_bottom = 803.0
+theme_override_fonts/font = ExtResource("7_mlbvj")
+theme_override_font_sizes/font_size = 48
+text = "Click Seals to Warp"
+vertical_alignment = 1
+
 [node name="Seals" type="Control" parent="UICanvas/PauseBG"]
 anchors_preset = 0
 offset_right = 40.0
@@ -100,15 +121,34 @@ offset_left = 22.0
 offset_top = 60.0
 offset_right = 304.0
 offset_bottom = 260.0
-tooltip_text = "Ostrich Slaying"
 texture = ExtResource("6_d7173")
 
 [node name="Cover" type="TextureRect" parent="UICanvas/PauseBG/Seals/OstrichSeal"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-mouse_filter = 0
 texture = ExtResource("7_7rcrt")
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/OstrichSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
 
 [node name="StabbySeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
@@ -126,6 +166,27 @@ offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
 
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/StabbySeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
+
 [node name="GoatmenSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
 offset_left = 22.0
@@ -141,6 +202,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/GoatmenSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
 
 [node name="WorshipSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
@@ -158,6 +240,27 @@ offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
 
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/WorshipSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
+
 [node name="SitmanSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
 offset_left = 322.0
@@ -171,8 +274,28 @@ texture = ExtResource("11_68h0q")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-mouse_filter = 0
 texture = ExtResource("7_7rcrt")
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/SitmanSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
 
 [node name="DragonSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
@@ -180,7 +303,6 @@ offset_left = 322.0
 offset_top = 500.0
 offset_right = 604.0
 offset_bottom = 700.0
-tooltip_text = "Dragons"
 texture = ExtResource("12_d04gq")
 
 [node name="Cover" type="TextureRect" parent="UICanvas/PauseBG/Seals/DragonSeal"]
@@ -189,6 +311,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/DragonSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
 
 [node name="BeerSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
@@ -206,6 +349,27 @@ offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
 
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/BeerSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
+
 [node name="GoatsSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
 offset_left = 622.0
@@ -222,6 +386,27 @@ offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
 
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/GoatsSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
+
 [node name="RollerCoasterSeal" type="TextureRect" parent="UICanvas/PauseBG/Seals"]
 layout_mode = 1
 offset_left = 622.0
@@ -237,6 +422,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("7_7rcrt")
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG/Seals/RollerCoasterSeal"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 141.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yevu3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cepos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8xko7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6dof")
+flat = true
 
 [node name="Icons" type="Control" parent="UICanvas/PauseBG"]
 layout_mode = 1
@@ -299,6 +505,48 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="FSButton" type="Button" parent="UICanvas/PauseBG"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -200.0
+offset_right = 420.0
+offset_bottom = -120.0
+grow_vertical = 0
+theme = SubResource("Theme_18vrf")
+text = "Toggle Fullscreen"
+
+[node name="ResButton" type="Button" parent="UICanvas/PauseBG"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 420.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = SubResource("Theme_18vrf")
+text = "3D Scaling: 1x"
+
+[node name="WarpButton" type="Button" parent="UICanvas/PauseBG"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = -100.0
+offset_right = 840.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = SubResource("Theme_18vrf")
+text = "Warp to Start"
+
 [node name="QuitButton" type="Button" parent="UICanvas/PauseBG"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
@@ -325,9 +573,22 @@ script = ExtResource("19_evdjp")
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+msaa_3d = 1
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="World" parent="SubViewportContainer/SubViewport" instance=ExtResource("18_2h6oo")]
 
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/OstrichSeal/WarpButton" to="." method="_on_ostrich_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/StabbySeal/WarpButton" to="." method="_on_stabby_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/GoatmenSeal/WarpButton" to="." method="_on_goatmen_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/WorshipSeal/WarpButton" to="." method="_on_worship_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/SitmanSeal/WarpButton" to="." method="_on_sitman_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/DragonSeal/WarpButton" to="." method="_on_dragon_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/BeerSeal/WarpButton" to="." method="_on_beer_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/GoatsSeal/WarpButton" to="." method="_on_goats_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/Seals/RollerCoasterSeal/WarpButton" to="." method="_on_rollercoaster_warp_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/FSButton" to="." method="_on_fs_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/ResButton" to="." method="_on_res_button_pressed"]
+[connection signal="pressed" from="UICanvas/PauseBG/WarpButton" to="." method="_on_warp_button_pressed"]
 [connection signal="pressed" from="UICanvas/PauseBG/QuitButton" to="." method="_on_quit_button_pressed"]

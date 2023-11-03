@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://55d6e03cw7mo"]
+
+[ext_resource type="Texture2D" uid="uid://bud3qqxca4t4w" path="res://assets/textures/actors/innana.png" id="1_ayq7u"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_g03hk"]
+[ext_resource type="Resource" path="res://dialog/timelines/littleguytimeline.dtl" id="3_qbufe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rn88a"]
+height = 6.50527
+radius = 0.863424
+
+[node name="Innanna" type="Sprite3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 6.35785, 20.9238, 10.2555)
+visibility_range_end = 100.0
+modulate = Color(0.529412, 0.486275, 0.403922, 1)
+pixel_size = 0.008
+billboard = 2
+texture = ExtResource("1_ayq7u")
+script = ExtResource("2_g03hk")
+dialog_timeline = ExtResource("3_qbufe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_rn88a")

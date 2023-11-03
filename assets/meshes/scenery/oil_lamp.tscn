@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://7ipwo27phdfp"]
 
 [ext_resource type="PackedScene" uid="uid://cwvegoaqjmn4c" path="res://assets/meshes/import/scenery/oillamp.glb" id="1_pk0un"]
+[ext_resource type="Texture2D" uid="uid://bd0am3hdmaj0h" path="res://assets/textures/scenery/oillamp_lamp_small.png" id="2_3ahg7"]
 [ext_resource type="Script" path="res://scenes/terrain/lamp_fire.gd" id="2_5tpae"]
-[ext_resource type="Texture2D" uid="uid://c3ecbds0ovq76" path="res://assets/textures/scenery/oillamp_lamp.png" id="2_kkntj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ntf3"]
-albedo_texture = ExtResource("2_kkntj")
+albedo_texture = ExtResource("2_3ahg7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jougn"]
 shading_mode = 0
@@ -28,6 +28,7 @@ script = ExtResource("2_5tpae")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1.06696, 0.470456, 0)
 visible = false
 light_color = Color(0.933333, 0.592157, 0, 1)
-light_energy = 0.1
+light_energy = 0.25
 light_size = 1.0
 light_bake_mode = 1
+omni_range = 10.0

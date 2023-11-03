@@ -57,7 +57,7 @@ shape = SubResource("BoxShape3D_phlw0")
 [node name="RiverUphill2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.942641, 0, 0.333807, 0, 1, 0, -0.333807, 0, 0.942641, 26.532, 11.254, -435.426)
 material_override = SubResource("StandardMaterial3D_wdwiv")
-size = Vector3(114.268, 0.002, 153.833)
+size = Vector3(114.268, 0.012, 153.923)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RiverUphill2"]
 

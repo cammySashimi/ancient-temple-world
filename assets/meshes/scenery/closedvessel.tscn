@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn1b54dixk04f"]
+
+[ext_resource type="PackedScene" uid="uid://ckygxwum2tprb" path="res://assets/meshes/import/scenery/closedvessel.glb" id="1_pbykl"]
+[ext_resource type="Texture2D" uid="uid://rfjw828ky4e8" path="res://assets/textures/scenery/closedvessel_texture.png" id="2_mft7s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b2ej"]
+albedo_texture = ExtResource("2_mft7s")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hhvh6"]
+points = PackedVector3Array(-1.01311, 0.815799, -0.0630712, 1.01689, 0.752616, 0.0951604, 1.01553, 0.689287, 0.0950326, 0.0951521, 0.752773, -1.01687, 0.503571, 1.57119, -0.188694, -0.0312179, 0.220415, 0.814684, -0.0627219, 1.22364, 0.847176, -0.0940313, -0.000647752, -0.345028, -0.503578, 1.57118, -0.188693, 0.754171, 0.218679, -0.314077, -0.754832, 0.46978, 0.629091, -0.726299, 0.53178, -0.694445, 0.692037, 0.941569, 0.723582, 0.723654, 0.941586, -0.691924, 0.594285, 0.221285, 0.562931, -0.379461, 1.57509, 0.379458, -0.814569, 0.220359, 0.0312163, -0.0627219, 1.22364, -0.847176, 0.437456, 1.56544, 0.312194, 0.314139, 0.250281, -0.785364, -0.692041, 0.941567, 0.723576, 0.0316779, 0.625401, 1.01784, -0.658201, 1.00372, -0.720838, 0.0940218, -0.000648511, 0.345028, -0.314258, 0.218714, -0.754133, 0.188688, 1.57118, -0.503577, 0.847205, 1.22366, 0.0625235, -0.92392, 0.975403, 0.382305, 0.726294, 0.531778, -0.694448, -0.252091, -0.00404439, 0.252284, 0.629087, 0.469779, 0.754834, -0.410618, 0.752961, -0.947482)
+
+[node name="closedvessel" instance=ExtResource("1_pbykl")]
+
+[node name="closed_vessel" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_8b2ej")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="closed_vessel" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="closed_vessel/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hhvh6")
