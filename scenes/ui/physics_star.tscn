@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqdu3m2u5iw6e"]
+
+[ext_resource type="Texture2D" uid="uid://bjhjtnh05d1gu" path="res://assets/textures/scenery/star.png" id="1_8rhf0"]
+[ext_resource type="Script" path="res://scenes/ui/physics_star.gd" id="1_uklke"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ot3ou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slxy3"]
+radius = 49.4219
+
+[node name="PhysicsStar" type="Node2D"]
+script = ExtResource("1_uklke")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1, 0)
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_ot3ou")
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_8rhf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_slxy3")
+
+[connection signal="mouse_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D" to="." method="_on_rigid_body_2d_mouse_exited"]
