@@ -591,7 +591,6 @@ transform = Transform3D(0.24102, 0, 0.385383, 0, 0.454545, 0, -0.385383, 0, 0.24
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44525, -0.813396, 11.8851)
 
 [node name="DownstairsShelfClutter" type="Node3D" parent="Places/City/Scenery/house1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="brb" parent="Places/City/Scenery/house1/DownstairsShelfClutter" instance=ExtResource("31_y73o4")]
 transform = Transform3D(0.143959, 0, -0.111056, 0, 0.181818, 0, 0.111056, 0, 0.143959, -4.89899, 1.25083, -7.19434)
