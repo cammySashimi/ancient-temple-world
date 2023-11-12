@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=83 format=3 uid="uid://c7wxxd4eobnjt"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
@@ -46,10 +46,13 @@
 [ext_resource type="PackedScene" uid="uid://cpw0kycyyaj6m" path="res://scenes/actors/folks/phalanx.tscn" id="32_s20mx"]
 [ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://dtn216ljo4jav" path="res://assets/meshes/scenery/conicalbasket.tscn" id="34_gnvvn"]
+[ext_resource type="Texture2D" uid="uid://bdt0rsbvrllmi" path="res://assets/textures/actors/skirt_guy_1.png" id="35_3xsiw"]
 [ext_resource type="Resource" path="res://dialog/timelines/phalanx.dtl" id="35_7kegq"]
 [ext_resource type="PackedScene" uid="uid://buad7wfa2yphx" path="res://assets/meshes/scenery/pot_1.tscn" id="35_y1blu"]
 [ext_resource type="PackedScene" uid="uid://3ray4yjni14g" path="res://assets/meshes/scenery/courtyard_house.tscn" id="36_7fhuh"]
 [ext_resource type="PackedScene" uid="uid://jlpgqe5ib5wg" path="res://assets/meshes/scenery/lighthouse.tscn" id="36_8ii16"]
+[ext_resource type="Texture2D" uid="uid://bmpp8j17jcg7r" path="res://assets/textures/actors/owl_2.png" id="36_vyr5v"]
+[ext_resource type="Texture2D" uid="uid://dwhggkf7kds40" path="res://assets/textures/actors/skirt_guy_2.png" id="37_61c4n"]
 [ext_resource type="PackedScene" uid="uid://q8he3ldp5ird" path="res://scenes/actors/folks/lighthouse_keeper.tscn" id="37_cf1w2"]
 [ext_resource type="PackedScene" uid="uid://dd5am4ros4lxa" path="res://scenes/actors/folks/lighthouse_sign.tscn" id="37_xajfo"]
 [ext_resource type="Resource" path="res://dialog/timelines/lighthouse_keeper.dtl" id="38_otk0m"]
@@ -63,6 +66,10 @@
 [ext_resource type="PackedScene" uid="uid://cxnw7i31kp8r8" path="res://assets/meshes/scenery/tent_4.tscn" id="49_beftf"]
 [ext_resource type="PackedScene" uid="uid://cr1kf0g65rcij" path="res://assets/meshes/scenery/tent_car.tscn" id="50_1xc8i"]
 [ext_resource type="PackedScene" uid="uid://cniojk4y01y7u" path="res://assets/meshes/scenery/tent_7.tscn" id="51_e8j5q"]
+[ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="56_tx2ck"]
+[ext_resource type="Texture2D" uid="uid://ct3gknj8rtnbs" path="res://assets/textures/actors/the_birdman.png" id="59_sr2vc"]
+[ext_resource type="PackedScene" uid="uid://bqbi11mefc7e8" path="res://scenes/terrain/pinetree.tscn" id="61_whfgh"]
+[ext_resource type="PackedScene" uid="uid://jprh316685ds" path="res://scenes/actors/folks/dogwalker.tscn" id="65_aooxg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ac5tq"]
 size = Vector3(28.4796, 7.51341, 1)
@@ -442,7 +449,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.65808, 0.801108, 
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.26913, 0.801108, 5.23242)
 
 [node name="BeerUrn4" parent="Places/Courtyard/Items/Urns" instance=ExtResource("14_x44m3")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.08117, 0.801108, 8.06622)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -62.6443, 11.5251, 12.3018)
 
 [node name="BeerUrn5" parent="Places/Courtyard/Items/Urns" instance=ExtResource("14_x44m3")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.659076, 0.801108, 11.9801)
@@ -616,6 +623,20 @@ transform = Transform3D(0.308197, 0, 0.738251, 0, 0.799999, 0, -0.738251, 0, 0.3
 [node name="conicalbasket" parent="Places/City/Scenery/house1" instance=ExtResource("34_gnvvn")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.82602, 0.244377, -4.28882)
 
+[node name="Man" parent="Places/City/Scenery/house1" instance=ExtResource("11_igiah")]
+transform = Transform3D(0.719796, 0, -0.55528, 0, 0.909091, 0, 0.55528, 0, 0.719796, 2.4903, 1.22734, -2.32349)
+shaded = false
+texture = ExtResource("35_3xsiw")
+
+[node name="Beast" parent="Places/City/Scenery/house1" instance=ExtResource("11_igiah")]
+transform = Transform3D(0.719796, 0, -0.55528, 0, 0.909091, 0, 0.55528, 0, 0.719796, 3.94849, 0.969695, 1.72992)
+shaded = false
+texture = ExtResource("36_vyr5v")
+
+[node name="RoofMan" parent="Places/City/Scenery/house1" instance=ExtResource("11_igiah")]
+transform = Transform3D(0.719796, 0, -0.55528, 0, 0.909091, 0, 0.55528, 0, 0.719796, -8.53732, 8.95948, 4.41638)
+texture = ExtResource("37_61c4n")
+
 [node name="LittleHouse" type="Node3D" parent="Places/City"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 32.0969, -11.5679, -49.3372)
 
@@ -657,7 +678,7 @@ dialog_timeline = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.503, 19.0006, -5.30811)
 
 [node name="Phalanx" parent="Places/MeanGuys" instance=ExtResource("32_s20mx")]
-transform = Transform3D(-0.49354, 0, -0.667322, 0, 0.83, 0, 0.667322, 0, -0.49354, 9.15302, -4.24339, -6.32928)
+transform = Transform3D(-0.49354, 0, -0.667322, 0, 0.83, 0, 0.667322, 0, -0.49354, 9.15302, -6.03842, -0.00973511)
 dialog_timeline = ExtResource("35_7kegq")
 
 [node name="Lighthouse" type="Node3D" parent="Places"]
@@ -755,6 +776,246 @@ transform = Transform3D(0.212703, 0, -0.131368, 0, 0.25, 0, 0.131368, 0, 0.21270
 [node name="KidsTent" parent="Places/BanditCamp/Scenery" instance=ExtResource("50_1xc8i")]
 transform = Transform3D(-0.205556, 0, -0.142291, 0, 0.25, 0, 0.142291, 0, -0.205556, 18.6559, -4.99038, -50.2256)
 
+[node name="mountainsides" type="Node3D" parent="Places"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8376, 0, -234.229)
+
+[node name="TheBirdMan" parent="Places/mountainsides" instance=ExtResource("11_igiah")]
+transform = Transform3D(4.595, 0, 0, 0, 4.595, 0, 0, 0, 4.595, 263.228, 54.6234, 45.4009)
+visibility_range_end = 389.62
+modulate = Color(0.752941, 0.905882, 0.752941, 1)
+shaded = false
+texture = ExtResource("59_sr2vc")
+
+[node name="swamp" type="Node3D" parent="Places"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8376, 0, -234.229)
+
+[node name="swamp_palms" type="Node3D" parent="Places/swamp"]
+transform = Transform3D(1.635, 0, 0, 0, 1.635, 0, 0, 0, 1.635, 21.3826, -2.7, 37.7765)
+
+[node name="Palm" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Palm2" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.472858, 0.030679, 0.291959, 0.102865, 0.501119, -0.219258, -0.274954, 0.240238, 0.420073, 0.123474, 0.626857, 0.220413)
+
+[node name="Palm3" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.479954, 0.199242, 0.464867, 0, 0.640865, -0.274675, -0.505766, 0.189074, 0.441142, 9.41766, 0, 5.14499)
+
+[node name="Palm4" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.511169, -0.000351068, 0.648434, -0.128203, 0.809444, -0.100626, -0.635634, -0.162977, -0.501167, -12.6873, -4.24583, -15.1348)
+
+[node name="Palm5" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.167006, 0, 0.623273, 0, 0.64526, 0, -0.623273, 0, -0.167006, -15.9935, 0, 0.989182)
+
+[node name="Palm6" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.656587, 0, -0.205762, 0, 0.688073, 0, 0.205762, 0, -0.656587, 6.86636, 4.64916e-06, -13.3824)
+
+[node name="Palm7" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.7737, 0, 0, 0, 0.7737, 0, 0, 0, 0.7737, 14.0302, -5.17219, -29.0378)
+
+[node name="Palm8" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.506, 0, 0, 0, 0.506, 0, 0, 0, 0.506, 2.70514, 0.80142, -36.6846)
+
+[node name="Palm9" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.685015, 0, 0, 0, 0.685015, 0, 0, 0, 0.685015, 17.4372, 0, 76.4169)
+
+[node name="Palm10" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0183798, 0.224883, -0.522141, 0.108699, 0.511386, 0.224077, 0.558022, -0.107021, -0.0264505, -0.646576, 6.28041, 77.6898)
+
+[node name="Palm11" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.541284, 0, 0, 0, 0.541284, 0, 0, 0, 0.541284, 18.7215, 0, 57.4598)
+
+[node name="Palm12" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.349545, 0, -0.960366, 0, 1.022, 0, 0.960366, 0, -0.349545, 18.5631, 0.0432333, 74.3867)
+
+[node name="Palm13" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.239141, 0, 0.807326, 0, 0.842, 0, -0.807326, 0, 0.239141, 28.498, 0.640049, 53.9986)
+
+[node name="Palm14" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.293815, 0.178157, 0.72577, 0.100496, 0.763345, -0.228064, -0.740529, 0.174279, 0.257009, 37.8522, 1.74196, 63.3733)
+
+[node name="Palm16" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.771495, 0.0735534, 0.00320477, 0.0735527, 0.771502, -0.000305536, -0.00321931, -1.73472e-18, -0.774993, -3.21249, 0.669085, 37.7333)
+
+[node name="Palm17" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.412917, 0.123889, -0.0144877, 0.119448, 0.378317, -0.169314, -0.035923, -0.166093, -0.396461, -2.97357, 1.13433, 37.7628)
+
+[node name="Palm18" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.537923, 0.0480181, -0.0181494, 0.0512844, 0.494344, -0.212108, -0.00224465, -0.212871, -0.496666, 4.38507, -0.0552505, 34.4284)
+
+[node name="Palm19" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.638652, -0.0397952, -0.00477498, -0.0389203, 0.633957, -0.0778835, 0.00957403, -0.0774402, -0.635133, -18.7517, -1.15488, 38.2767)
+
+[node name="Palm20" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.683384, 0.0645988, -0.137162, 0.0658758, 0.696893, 0, 0.136554, -0.0129081, -0.68643, -10.1967, 1.33495, 47.9802)
+
+[node name="Palm21" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.530845, 0.0506101, 0.00220512, 0.0506097, 0.53085, -0.000210232, -0.00221512, 0, -0.533252, -8.0983, 1.13489, 27.16)
+
+[node name="Palm22" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.596906, 0.0569082, 0.00247952, 0.0569077, 0.596911, -0.000236392, -0.00249076, 0, -0.599612, -2.8331, -2.27126, 17.2992)
+
+[node name="Palm15" parent="Places/swamp/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.474006, 0, 0, 0, 0.474006, 0, 0, 0, 0.474006, 8.50101, -3.57628e-06, 81.5372)
+
+[node name="swamp_palms" type="Node3D" parent="Places/swamp/swamp_palms"]
+transform = Transform3D(0.432781, 0, -1.57668, 0, 1.635, 0, 1.57668, 0, 0.432781, -41.8916, -0.139523, -26.4783)
+
+[node name="Palm" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Palm2" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.472858, 0.030679, 0.291959, 0.102865, 0.501119, -0.219258, -0.274954, 0.240238, 0.420073, 0.123474, 0.626857, 0.220413)
+
+[node name="Palm3" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.479954, 0.199242, 0.464867, 0, 0.640865, -0.274675, -0.505766, 0.189074, 0.441142, 9.41766, 0, 5.14499)
+
+[node name="Palm4" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.511169, -0.000351068, 0.648434, -0.128203, 0.809444, -0.100626, -0.635634, -0.162977, -0.501167, -11.7743, -4.24583, -9.45956)
+
+[node name="Palm5" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.167006, 0, 0.623273, 0, 0.64526, 0, -0.623273, 0, -0.167006, -15.9935, 0, 0.989182)
+
+[node name="Palm6" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.656587, 0, -0.205762, 0, 0.688073, 0, 0.205762, 0, -0.656587, 6.86636, 4.64916e-06, -13.3824)
+
+[node name="Palm7" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.7737, 0, 2.98023e-08, 0, 0.7737, 0, -2.98023e-08, 0, 0.7737, 20.3031, -1.96519, -24.1147)
+
+[node name="Palm8" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.30581, 0, 7.45058e-09, 0, 0.30581, 0, -7.45058e-09, 0, 0.30581, 0.941254, 0, -28.4015)
+
+[node name="Palm9" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.685015, 0, 1.49012e-08, 0, 0.685015, 0, -1.49012e-08, 0, 0.685015, 175.247, 0, -51.455)
+
+[node name="Palm10" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.0117272, 1.24855, -0.608539, 0.0322489, 0.60864, 1.24813, 1.38858, -0.00359029, -0.0341262, -17.8749, 12.8729, 83.1488)
+
+[node name="Palm11" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.541284, 0, 7.45058e-08, 0, 0.541284, 0, -7.45058e-08, 0, 0.541284, 176.532, 3.28755, -70.4122)
+
+[node name="Palm12" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.50637, 0, -0.659915, 0, 0.831804, 0, 0.659915, 0, -0.50637, 176.373, 0.0432335, -53.4852)
+
+[node name="Palm13" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.139836, 0, 0.472079, 0, 0.492355, 0, -0.472079, 0, 0.139836, 186.308, 5.22659, -73.8734)
+
+[node name="Palm14" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.185745, 0.112628, 0.458822, 0.0635324, 0.482576, -0.144179, -0.468152, 0.110177, 0.162477, 195.662, 3.30921, -64.4986)
+
+[node name="Palm16" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.771495, 0.0735534, 0.00320476, 0.0735527, 0.771502, -0.000305536, -0.00321931, 0, -0.774993, -3.21245, 0.669085, 37.7333)
+
+[node name="Palm17" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.412917, 0.123889, -0.0144877, 0.119448, 0.378317, -0.169314, -0.035923, -0.166093, -0.396461, 9.75403, 1.13433, 33.4313)
+
+[node name="Palm18" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.537923, 0.0480181, -0.0181494, 0.0512844, 0.494344, -0.212108, -0.00224464, -0.212871, -0.496666, 22.5663, -0.0552504, 20.2894)
+
+[node name="Palm19" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.638652, -0.0397952, -0.004775, -0.0389203, 0.633957, -0.0778835, 0.00957404, -0.0774402, -0.635133, -11.4069, 1.49945, 30.413)
+
+[node name="Palm20" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.280969, 0.0265461, -0.607661, 0.0635875, 0.666976, -0.000264138, 0.604907, -0.0577819, -0.28222, 1.23726, 1.33495, 10.7288)
+
+[node name="Palm21" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.187251, 0.0180496, 0.498973, 0.0506097, 0.53085, -0.000210232, -0.496728, 0.0472821, -0.188119, 0.914352, 1.13489, 18.256)
+
+[node name="Palm22" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.596906, 0.0569082, 0.00247952, 0.0569078, 0.596911, -0.000236392, -0.00249076, -9.31323e-10, -0.599612, -14.6064, -2.27126, 15.3218)
+
+[node name="Palm15" parent="Places/swamp/swamp_palms/swamp_palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.474006, 0, 7.45058e-09, 0, 0.474006, 0, -7.45058e-09, 0, 0.474006, 166.311, 3.01668, -46.3347)
+
+[node name="swamp_palms2" type="Node3D" parent="Places/swamp/swamp_palms"]
+transform = Transform3D(1.54622, 0, 0.53144, 0, 1.635, 0, -0.53144, 0, 1.54622, 32.0209, -1.20472, -69.9261)
+
+[node name="Palm" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422409, 0, 19.5115)
+
+[node name="Palm2" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.472858, 0.030679, 0.291959, 0.102865, 0.501119, -0.219258, -0.274954, 0.240238, 0.420073, -25.9901, 0.626857, 6.49352)
+
+[node name="Palm3" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.661973, 0.0862595, 0.201259, 1.1277e-08, 0.640865, -0.274675, -0.218965, 0.260779, 0.608443, -9.69815, 2.58714, 4.11911)
+
+[node name="Palm4" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.511169, -0.000351071, 0.648434, -0.128203, 0.809444, -0.100626, -0.635634, -0.162977, -0.501167, -23.4393, 1.37103, 7.27643)
+
+[node name="Palm5" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.167006, 0, 0.623273, 0, 0.64526, 0, -0.623273, 0, -0.167006, -15.9935, 0, 0.989182)
+
+[node name="Palm6" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.656587, 0, -0.205762, 0, 0.688073, 0, 0.205762, 0, -0.656587, -34.1991, 2.06049, -10.5863)
+
+[node name="Palm7" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.7737, 0, 0, 0, 0.7737, 0, 0, 0, 0.7737, -602.147, -5.17219, 250.225)
+
+[node name="Palm8" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.30581, 0, 0, 0, 0.30581, 0, 0, 0, 0.30581, 26.7429, 7.83292, -18.2573)
+
+[node name="Palm9" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.685015, 0, 2.98023e-08, 0, 0.685015, 0, -2.98023e-08, 0, 0.685015, 24.28, 6.91957, 58.6541)
+
+[node name="Palm10" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0183799, 0.224883, -0.522141, 0.108699, 0.511386, 0.224077, 0.558022, -0.107021, -0.0264505, -7.68344, 3.64659, 98.1635)
+
+[node name="Palm11" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.541284, 0, -1.49012e-08, 0, 0.541284, 0, 1.49012e-08, 0, 0.541284, -19.3397, 1.53851, 51.6715)
+
+[node name="Palm12" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.50637, 0, -0.659915, 0, 0.831804, 0, 0.659915, 0, -0.50637, 9.05528, 3.14555, 68.7861)
+
+[node name="Palm13" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.139836, 0, 0.472079, 0, 0.492355, 0, -0.472079, 0, 0.139836, 28.498, -3.52003, 53.9986)
+
+[node name="Palm14" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.185745, 0.112628, 0.458822, 0.0635324, 0.482576, -0.144179, -0.468152, 0.110177, 0.162477, 37.8522, 0.0428134, 63.3733)
+
+[node name="Palm16" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.590311, -0.0564761, -0.498967, 0.0735527, 0.771502, -0.000305536, 0.496737, -0.0471226, 0.593006, -17.2288, 0.669085, 50.854)
+
+[node name="Palm17" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.0848856, 0.194799, 0.375375, 0.119448, 0.378317, -0.169314, -0.405691, 0.0706293, -0.128394, -6.00711, 1.92015, 33.6551)
+
+[node name="Palm18" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.537923, 0.0480181, -0.0181494, 0.0512844, 0.494344, -0.212108, -0.00224467, -0.212871, -0.496666, 4.38507, -0.0552504, 34.4284)
+
+[node name="Palm19" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.638652, -0.0397951, -0.00477497, -0.0389203, 0.633957, -0.0778835, 0.00957403, -0.0774402, -0.635133, -16.25, 0.745808, 35.6145)
+
+[node name="Palm20" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.497815, 0.047461, 0.00206791, 0.0474606, 0.497819, -0.000197148, -0.00207727, 9.31323e-10, -0.500072, -10.1967, 1.33495, 47.9802)
+
+[node name="Palm21" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.530845, 0.0506101, 0.00220515, 0.0506097, 0.53085, -0.000210232, -0.00221512, 0, -0.533252, -8.09827, 1.13489, 27.1599)
+
+[node name="Palm22" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.596906, 0.0569082, 0.00247952, 0.0569078, 0.596911, -0.000236392, -0.00249076, 3.72529e-09, -0.599612, -16.4819, -2.27126, 19.7614)
+
+[node name="Palm15" parent="Places/swamp/swamp_palms/swamp_palms2" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.474006, 0, 0, 0, 0.474006, 0, 0, 0, 0.474006, -0.741516, 2.23086, 94.0074)
+
+[node name="Planst" type="Node3D" parent="Places/swamp"]
+
+[node name="Pinetree" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9148, 15.5405, 64.4498)
+
+[node name="Pinetree2" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.062, 18.1375, -80.0059)
+
+[node name="Pinetree3" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 325.389, 28.7022, -19.1102)
+
+[node name="Pinetree4" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.961, 19.5943, 225.768)
+
+[node name="Pinetree5" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.5074, 24.8075, 276.646)
+
+[node name="Pinetree6" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.235, 22.6222, 153.548)
+
 [node name="Terrain" type="Node3D" parent="."]
 
 [node name="Ground" type="Terrain3D" parent="Terrain"]
@@ -779,15 +1040,15 @@ transform = Transform3D(4.22524, 0, -7.94653, 0, 9, 0, 7.94653, 0, 4.22524, -291
 texture = ExtResource("9_tls7c")
 
 [node name="Mush5" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(-2.26245, 0, -13.816, 0, 14, 0, 13.816, 0, -2.26245, -309.081, 59.0128, -221.246)
+transform = Transform3D(-2.69219, 0, -13.7387, 0, 14, 0, 13.7387, 0, -2.69219, -578.547, 45.6947, -269.833)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush6" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(-7.25374, 0, -6.88354, 0, 10, 0, 6.88354, 0, -7.25374, -264.171, 36.1561, -399.553)
+transform = Transform3D(-9.99967, 0, -0.0799336, 0, 10, 0, 0.0799336, 0, -9.99967, -211.539, 59.5679, -460.56)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush7" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(9.07044, 0, 4.21036, 0, 10, 0, -4.21036, 0, 9.07044, -72.6493, 57.4884, -399.553)
+transform = Transform3D(9.07044, 0, 4.21036, 0, 10, 0, -4.21036, 0, 9.07044, 140.885, 42.1938, -482.349)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush8" type="Sprite3D" parent="Terrain/Mushushes"]
@@ -795,7 +1056,7 @@ transform = Transform3D(14.6557, 0, -3.19546, 0, 15, 0, 3.19546, 0, 14.6557, 147
 texture = ExtResource("9_tls7c")
 
 [node name="Mush9" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(7.04207, 0, -13.2442, 0, 15, 0, 13.2442, 0, 7.04207, 370.877, 58.0158, -325.219)
+transform = Transform3D(7.04207, 0, -13.2442, 0, 15, 0, 13.2442, 0, 7.04207, 370.877, 111.291, -325.219)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush10" type="Sprite3D" parent="Terrain/Mushushes"]
@@ -807,7 +1068,7 @@ transform = Transform3D(2.67238, 0, 9.6363, 0, 10, 0, -9.6363, 0, 2.67238, 395.0
 texture = ExtResource("9_tls7c")
 
 [node name="Mush12" type="Sprite3D" parent="Terrain/Mushushes"]
-transform = Transform3D(-4.43696, 0, -11.1496, 0, 12, 0, 11.1496, 0, -4.43696, 350.023, 38.2208, 245.118)
+transform = Transform3D(-4.43696, 0, -11.1496, 0, 12, 0, 11.1496, 0, -4.43696, 408.735, 85.3806, 205.763)
 texture = ExtResource("9_tls7c")
 
 [node name="Mush3" type="Sprite3D" parent="Terrain/Mushushes"]
@@ -835,3 +1096,73 @@ autoplay = true
 libraries = {
 "": SubResource("AnimationLibrary_mstnp")
 }
+
+[node name="courtyard_house" parent="." instance=ExtResource("36_7fhuh")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -29.807, 25.3829, -384.779)
+
+[node name="tent" parent="." instance=ExtResource("51_e8j5q")]
+transform = Transform3D(0.321028, -0.0407199, -0.179396, 0.0365947, 0.367746, -0.0179864, 0.180283, -0.00213733, 0.3231, -59.6214, 25.1198, -377.724)
+
+[node name="tent2" parent="." instance=ExtResource("46_x5jnw")]
+transform = Transform3D(-0.208257, 0.0166473, -0.208271, 0.0246723, 0.293964, -0.00117383, 0.207474, -0.0182474, -0.208918, -52.2755, 25.7577, -376.801)
+
+[node name="Palm16" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(1.09, 0, 0, 0, 1.09, 0, 0, 0, 1.09, -56.4353, 22.9272, -386.981)
+
+[node name="courtyard_house2" parent="." instance=ExtResource("36_7fhuh")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 249.946, 16.9769, -268.176)
+
+[node name="tent3" parent="." instance=ExtResource("41_660b7")]
+transform = Transform3D(-0.367197, 0, -0.251378, 0, 0.445, 0, 0.251378, 0, -0.367197, 275.73, 15.416, -244.252)
+
+[node name="tent4" parent="." instance=ExtResource("47_cm63g")]
+transform = Transform3D(-0.424998, 0, 0.00141673, 0, 0.425, 0, -0.00141673, 0, -0.424998, 281.008, 15.7502, -226.815)
+
+[node name="brazier" parent="." instance=ExtResource("13_oe6pc")]
+transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 266.156, 10.7295, -242.706)
+
+[node name="conicalbasket" parent="." instance=ExtResource("34_gnvvn")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 270.687, 15.5878, -242.795)
+
+[node name="OilLamp" parent="." instance=ExtResource("32_1k6al")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 247.482, 23.1197, -258.852)
+
+[node name="Palm" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0398677, 0, -0.458269, 0, 0.46, 0, 0.458269, 0, 0.0398677, 4.33173, 13.127, 21.2666)
+
+[node name="Palm2" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.462807, 0, -0.306325, 0, 0.555, 0, 0.306325, 0, 0.462807, -5.10312, 13.127, 21.7169)
+
+[node name="Palm3" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.200222, 0, 0.447226, 0, 0.49, 0, -0.447226, 0, 0.200222, -14.4344, 13.127, 20.3817)
+
+[node name="Palm4" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.296324, 0, -0.49859, 0, 0.58, 0, 0.49859, 0, 0.296324, -22.2576, 13.127, 19.46)
+
+[node name="Palm5" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0927477, 0, 0.61808, 0, 0.625, 0, -0.61808, 0, 0.0927477, -30.4066, 13.127, 19.8706)
+
+[node name="Palm6" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.231756, 0, -0.443045, 0, 0.5, 0, 0.443045, 0, 0.231756, -39.9333, 13.127, 21.8792)
+
+[node name="Palm7" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.337125, 0, -0.369251, 0, 0.5, 0, 0.369251, 0, 0.337125, -40.8118, 13.127, 7.46979)
+
+[node name="Palm8" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.0867631, 0, 0.451743, 0, 0.46, 0, -0.451743, 0, -0.0867631, -32.2449, 13.127, 4.91559)
+
+[node name="Palm9" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.439514, 0, -0.401064, 0, 0.595, 0, 0.401064, 0, 0.439514, -23.3666, 13.127, 5.77289)
+
+[node name="Palm10" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.135054, 0, -0.471021, 0, 0.49, 0, 0.471021, 0, -0.135054, -13.5272, 13.127, 7.40381)
+
+[node name="Palm11" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.559747, 0, -0.151933, 0, 0.58, 0, 0.151933, 0, -0.559747, -3.78799, 13.127, 7.16583)
+
+[node name="Palm12" parent="." instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 4.79016, 13.127, 6.91638)
+
+[node name="dogwalker" parent="." instance=ExtResource("65_aooxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.648, 10.2031, -318.455)
+modulate = Color(0.54902, 0.415686, 0.333333, 1)

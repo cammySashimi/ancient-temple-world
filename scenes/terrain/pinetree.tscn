@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqbi11mefc7e8"]
+
+[ext_resource type="Texture2D" uid="uid://bqp5x41x5eelt" path="res://assets/textures/scenery/pinetree.png" id="1_244ei"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3i558"]
+height = 23.495
+
+[node name="Pinetree" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171094, 12.9094, 0.242395)
+modulate = Color(0.408755, 0.442879, 0.408346, 1)
+billboard = 2
+texture = ExtResource("1_244ei")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.986715, -0.345345)
+shape = SubResource("CylinderShape3D_3i558")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://jprh316685ds"]
+
+[ext_resource type="Texture2D" uid="uid://dnfam7qmuuyn5" path="res://assets/textures/actors/dogwalker.png" id="1_q2u1s"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_h8gxg"]
+[ext_resource type="Resource" path="res://dialog/timelines/dogwalker.dtl" id="3_28aw2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pl5g5"]
+height = 1.72046
+
+[node name="dogwalker" type="Sprite3D"]
+visibility_range_end = 100.0
+modulate = Color(0.698039, 0.596078, 0.564706, 1)
+pixel_size = 0.004
+billboard = 2
+texture = ExtResource("1_q2u1s")
+script = ExtResource("2_h8gxg")
+dialog_timeline = ExtResource("3_28aw2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_pl5g5")

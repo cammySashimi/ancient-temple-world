@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmpp8j17jcg7r"
-path.s3tc="res://.godot/imported/owl_2.png-e4319454ff7a84a134e0a1daec2d7675.s3tc.ctex"
-path.etc2="res://.godot/imported/owl_2.png-e4319454ff7a84a134e0a1daec2d7675.etc2.ctex"
+uid="uid://bqp5x41x5eelt"
+path.s3tc="res://.godot/imported/pinetree.png-1714acbae053e6d8fe048a3765ff28f6.s3tc.ctex"
+path.etc2="res://.godot/imported/pinetree.png-1714acbae053e6d8fe048a3765ff28f6.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/actors/owl_2.png"
-dest_files=["res://.godot/imported/owl_2.png-e4319454ff7a84a134e0a1daec2d7675.s3tc.ctex", "res://.godot/imported/owl_2.png-e4319454ff7a84a134e0a1daec2d7675.etc2.ctex"]
+source_file="res://assets/textures/scenery/pinetree.png"
+dest_files=["res://.godot/imported/pinetree.png-1714acbae053e6d8fe048a3765ff28f6.s3tc.ctex", "res://.godot/imported/pinetree.png-1714acbae053e6d8fe048a3765ff28f6.etc2.ctex"]
 
 [params]
 

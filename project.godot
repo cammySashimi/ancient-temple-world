@@ -26,7 +26,9 @@ hammurabi="*res://hammurabi.gd"
 [dialogic]
 
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"testvar": ""
+}
 settings/text_speed=0.01
 text/skippable=true
 text/skippable_delay=0.1
