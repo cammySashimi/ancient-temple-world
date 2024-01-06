@@ -13,9 +13,11 @@ points = PackedVector3Array(2.52497, 1.267, -0.00318098, 2.44547, 1.35458, -0.00
 [node name="basket_grain" instance=ExtResource("1_3pm0x")]
 
 [node name="grain_pile" parent="." index="0"]
+visibility_range_end = 100.0
 surface_material_override/0 = SubResource("StandardMaterial3D_bqe2p")
 
 [node name="grain_basket" parent="." index="1"]
+visibility_range_end = 100.0
 surface_material_override/0 = ExtResource("3_agdg4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]

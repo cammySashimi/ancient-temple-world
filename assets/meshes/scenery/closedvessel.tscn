@@ -13,6 +13,7 @@ points = PackedVector3Array(-1.01311, 0.815799, -0.0630712, 1.01689, 0.752616, 0
 
 [node name="closed_vessel" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_8b2ej")
+visibility_range_end = 100.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="closed_vessel" index="0"]
 
