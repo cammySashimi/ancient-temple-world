@@ -1,26 +1,38 @@
 [gd_scene load_steps=9 format=3 uid="uid://cy4fa0k5hj5uu"]
 
+[ext_resource type="Shader" path="res://assets/materials/river.gdshader" id="2_6qfk2"]
 [ext_resource type="PackedScene" uid="uid://dmxsqm3enqqja" path="res://scenes/utility/sin_bob.tscn" id="2_mr17u"]
-[ext_resource type="Material" uid="uid://b2qw703iw1dr3" path="res://assets/materials/wet.tres" id="3_w5b17"]
-[ext_resource type="Texture2D" uid="uid://cvdh3w10g7ogu" path="res://assets/textures/floors/wet.png" id="4_rtsb6"]
-[ext_resource type="Texture2D" uid="uid://dfeqdueu6asgv" path="res://assets/textures/floors/wet_nomal.png" id="5_8np4v"]
+[ext_resource type="Material" uid="uid://cvfmrtom2rrw" path="res://assets/materials/river.tres" id="2_o2mhb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vuwdh"]
 size = Vector3(1012.16, 1, 1107.19)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdwiv"]
-transparency = 1
-albedo_texture = ExtResource("4_rtsb6")
-metallic_specular = 0.56
-roughness = 0.38
-normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource("5_8np4v")
-refraction_enabled = true
-uv1_triplanar = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wa76r"]
+render_priority = 0
+shader = ExtResource("2_6qfk2")
+shader_parameter/WATER_COL = Vector4(0.094, 0.168, 0.29, 1)
+shader_parameter/WATER2_COL = Vector4(0.137, 0.157, 0.188, 1)
+shader_parameter/FOAM_COL = Vector4(0.184, 0.235, 0.322, 1)
+shader_parameter/distortion_speed = 10.0
+shader_parameter/tile = Vector2(100, 50)
+shader_parameter/height = 0.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 6.295
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_phlw0"]
 size = Vector3(15.692, 1, 30.9453)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbevf"]
+render_priority = 0
+shader = ExtResource("2_6qfk2")
+shader_parameter/WATER_COL = Vector4(0.094, 0.168, 0.29, 1)
+shader_parameter/WATER2_COL = Vector4(0.137, 0.157, 0.188, 1)
+shader_parameter/FOAM_COL = Vector4(0.184, 0.235, 0.322, 1)
+shader_parameter/distortion_speed = 1.0
+shader_parameter/tile = Vector2(300, 100)
+shader_parameter/height = 0.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 1.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_avx88"]
 size = Vector3(123.935, 4.7195, 155.363)
@@ -34,9 +46,9 @@ rotation_speed = 0.0
 
 [node name="MainRiver" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13812, -2, 8.02441)
-material_override = ExtResource("3_w5b17")
 cast_shadow = 0
 size = Vector3(1000, 0.1, 1000)
+material = ExtResource("2_o2mhb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MainRiver"]
 
@@ -44,10 +56,22 @@ size = Vector3(1000, 0.1, 1000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.656, -1.2, 0)
 shape = SubResource("BoxShape3D_vuwdh")
 
+[node name="MainRiver2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13812, -2, 8.02441)
+cast_shadow = 0
+size = Vector3(1000, 0.1, 1000)
+material = ExtResource("2_o2mhb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainRiver2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainRiver2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.656, -1.2, 0)
+shape = SubResource("BoxShape3D_vuwdh")
+
 [node name="RiverUphill" type="CSGBox3D" parent="."]
 transform = Transform3D(0.942571, 0.145411, 0.30069, -7.26629e-09, 0.900258, -0.435357, -0.334004, 0.410355, 0.848558, 43.5098, -0.762136, -333.419)
-material_override = SubResource("StandardMaterial3D_wdwiv")
 size = Vector3(14.6973, 0.002, 55.2457)
+material = SubResource("ShaderMaterial_wa76r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RiverUphill"]
 
@@ -57,8 +81,8 @@ shape = SubResource("BoxShape3D_phlw0")
 
 [node name="RiverUphill2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.942641, 0, 0.333807, 0, 1, 0, -0.333807, 0, 0.942641, 26.532, 11.254, -435.426)
-material_override = SubResource("StandardMaterial3D_wdwiv")
 size = Vector3(114.268, 0.012, 153.923)
+material = SubResource("ShaderMaterial_rbevf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RiverUphill2"]
 
