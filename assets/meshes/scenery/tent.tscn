@@ -29,6 +29,7 @@ points = PackedVector3Array(-20.924, -0.478659, 15.703, -13.2991, 12.2662, -14.5
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Poles" parent="." index="0"]
+layers = 4
 surface_material_override/0 = SubResource("StandardMaterial3D_b5hu8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Poles" index="0"]
@@ -37,6 +38,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b5hu8")
 shape = SubResource("ConcavePolygonShape3D_rh7mx")
 
 [node name="Tent" parent="." index="1"]
+layers = 4
 surface_material_override/0 = SubResource("StandardMaterial3D_4iwm1")
 
 [node name="Top" type="StaticBody3D" parent="Tent" index="0"]

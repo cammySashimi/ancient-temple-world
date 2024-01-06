@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgshu3pmyuhn7"
-path.s3tc="res://.godot/imported/ancient_bread_texture.png-3c952191573272045b80636aaafeccae.s3tc.ctex"
-path.etc2="res://.godot/imported/ancient_bread_texture.png-3c952191573272045b80636aaafeccae.etc2.ctex"
+uid="uid://dd3eb54i8p3qk"
+path.s3tc="res://.godot/imported/hanginglamp_chain_texture.png-cb813aa082b23d1d361cd41fb538fd66.s3tc.ctex"
+path.etc2="res://.godot/imported/hanginglamp_chain_texture.png-cb813aa082b23d1d361cd41fb538fd66.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/items/ancient_bread_texture.png"
-dest_files=["res://.godot/imported/ancient_bread_texture.png-3c952191573272045b80636aaafeccae.s3tc.ctex", "res://.godot/imported/ancient_bread_texture.png-3c952191573272045b80636aaafeccae.etc2.ctex"]
+source_file="res://assets/textures/scenery/hanginglamp_chain_texture.png"
+dest_files=["res://.godot/imported/hanginglamp_chain_texture.png-cb813aa082b23d1d361cd41fb538fd66.s3tc.ctex", "res://.godot/imported/hanginglamp_chain_texture.png-cb813aa082b23d1d361cd41fb538fd66.etc2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

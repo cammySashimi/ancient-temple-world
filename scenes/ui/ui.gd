@@ -23,6 +23,7 @@ var scale_factor = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Required to change the 3D viewport's size when the window is resized.
+	$UICanvas/FadeOut.visible = true
 	self.get_node("UICanvas/PauseBG").hide()
 	urntotal = get_tree().get_nodes_in_group("beer_urn").size()
 	breadtotal = get_tree().get_nodes_in_group("ancient_bread").size()

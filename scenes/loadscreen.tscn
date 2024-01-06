@@ -90,6 +90,3 @@ vertical_alignment = 1
 [node name="Camera3D" type="Camera3D" parent="."]
 current = true
 fov = 179.0
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(900, 700)

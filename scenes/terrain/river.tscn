@@ -40,7 +40,8 @@ size = Vector3(123.935, 4.7195, 155.363)
 [node name="River" type="Node3D"]
 
 [node name="SinBob" parent="." instance=ExtResource("2_mr17u")]
-bob_amplitude = 0.5
+bob_frequency = 0.01
+bob_amplitude = 0.3
 rotation_speed = 0.0
 
 [node name="MainRiver" type="CSGBox3D" parent="."]

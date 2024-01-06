@@ -19,7 +19,7 @@ func _process(_delta):
 		topprog = progress[0]
 	else:
 		# dont tell
-		topprog += 0.0005
+		topprog += ((1-topprog) * 0.001)
 	$Control/CanvasLayer/LoadText/LoadPercent.text = str(snapped(topprog*100, 1)) + "%"
 	if load_status == ResourceLoader.THREAD_LOAD_LOADED:
 		await get_tree().create_timer(0.1).timeout #idk why this works but this makes the materials pre-render
