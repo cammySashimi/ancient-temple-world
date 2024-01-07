@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://db4s5qe77r5h1"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayouts/ExampleHistoryItem.gd" id="1_dgoja"]
-[ext_resource type="Texture2D" uid="uid://bvqgwmds7enrv" path="res://icon.svg" id="2_ywvym"]
+[ext_resource type="Texture2D" uid="uid://q6xct4768omt" path="res://icon.svg" id="2_ywvym"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upgjp"]
 content_margin_left = 5.0

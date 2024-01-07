@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="18"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="20_ljcq2"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayouts/Default/ExampleGlossaryPopup.gd" id="20_vmnp2"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayouts/ExampleHistoryScene.tscn" id="22_854kg"]
+[ext_resource type="PackedScene" uid="uid://dja8h8i2tcjy2" path="res://addons/dialogic/Modules/DefaultLayouts/ExampleHistoryScene.tscn" id="22_854kg"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/TextInput/node_text_input.gd" id="22_ltkcf"]
 [ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="23_gyqve"]
 [ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="24_aa4pl"]
