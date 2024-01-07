@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://bp3y8f61f0iex"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/CharacterEditor/char_edit_p_section_exports.gd" id="1_isys8"]
 

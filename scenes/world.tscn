@@ -1,18 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://c7wxxd4eobnjt"]
+[gd_scene load_steps=82 format=3 uid="uid://c7wxxd4eobnjt"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_16cwp"]
 [ext_resource type="PackedScene" uid="uid://ivugtbyvkdm6" path="res://scenes/actors/player.tscn" id="1_gjtjx"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_hsf1x"]
 [ext_resource type="LightmapGIData" uid="uid://df60d4rg27wtw" path="res://scenes/world.lmbake" id="3_lv2qp"]
 [ext_resource type="Environment" uid="uid://bynf3s6utyifw" path="res://scenes/env.tres" id="4_1vrg3"]
-[ext_resource type="PackedScene" uid="uid://bdjj3brbfd5df" path="res://scenes/terrain/firmament.tscn" id="6_eeybm"]
-[ext_resource type="Terrain3DStorage" uid="uid://cpgjwx0ormfo1" path="res://scenes/terrain/world_terrain3dstore.tres" id="6_hhpr4"]
+[ext_resource type="PackedScene" uid="uid://bdjj3brbfd5df" path="res://scenes/terrain/firmament.tscn" id="6_alg0o"]
 [ext_resource type="PackedScene" uid="uid://by735vvc2y5tr" path="res://assets/meshes/scenery/ziggurat.tscn" id="6_prbkk"]
-[ext_resource type="Terrain3DTextureList" uid="uid://cpgi5wftm0kym" path="res://scenes/terrain/world_terraintexlist.tres" id="7_7o4r2"]
 [ext_resource type="PackedScene" uid="uid://55d6e03cw7mo" path="res://scenes/actors/folks/innanna.tscn" id="7_ygbfp"]
 [ext_resource type="Resource" path="res://dialog/timelines/innanna.dtl" id="8_onhnw"]
-[ext_resource type="PackedScene" uid="uid://cy4fa0k5hj5uu" path="res://scenes/terrain/river.tscn" id="9_6xn7w"]
-[ext_resource type="Texture2D" uid="uid://6amrsha85ps" path="res://assets/textures/actors/mushushu_head.png" id="9_tls7c"]
 [ext_resource type="PackedScene" uid="uid://b3x6vh0yx4g38" path="res://scenes/actors/folks/little_bowl_guy.tscn" id="9_vj0on"]
+[ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="9_wnjab"]
 [ext_resource type="PackedScene" uid="uid://ct6ij7s0huxai" path="res://scenes/actors/folks/sydiekitty.tscn" id="10_pxyxc"]
 [ext_resource type="PackedScene" uid="uid://docuwnv52r2uc" path="res://scenes/actors/folks/votive.tscn" id="11_igiah"]
 [ext_resource type="PackedScene" uid="uid://dcwng2ll3hl0m" path="res://assets/meshes/items/ancient_bread.tscn" id="12_2m0sw"]
@@ -37,14 +34,11 @@
 [ext_resource type="Resource" path="res://dialog/timelines/littlechairguy_2.dtl" id="29_ukbf4"]
 [ext_resource type="Resource" path="res://dialog/timelines/littlechairguy_1.dtl" id="30_6etco"]
 [ext_resource type="Texture2D" uid="uid://c5tpctmrtc12q" path="res://assets/textures/actors/chair_guy_2.png" id="30_xd4bt"]
-[ext_resource type="AudioStream" uid="uid://c3wjkrv0yt055" path="res://assets/bgm/atw_market_square.ogg" id="31_bi732"]
 [ext_resource type="PackedScene" uid="uid://bxa4jk7osxhtd" path="res://assets/meshes/scenery/littleshelf.tscn" id="31_lkilt"]
 [ext_resource type="PackedScene" uid="uid://crrc6qsu4re17" path="res://assets/meshes/scenery/sickle_sword.tscn" id="31_y4aaw"]
 [ext_resource type="PackedScene" uid="uid://cywcs03w2bu5e" path="res://assets/meshes/scenery/brb.tscn" id="31_y73o4"]
 [ext_resource type="PackedScene" uid="uid://7ipwo27phdfp" path="res://assets/meshes/scenery/oil_lamp.tscn" id="32_1k6al"]
-[ext_resource type="AudioStream" uid="uid://d0whao3cr2oyh" path="res://assets/bgm/atw_deep_caverns.ogg" id="32_irnb7"]
 [ext_resource type="PackedScene" uid="uid://cpw0kycyyaj6m" path="res://scenes/actors/folks/phalanx.tscn" id="32_s20mx"]
-[ext_resource type="AudioStream" uid="uid://5p75fo10ds2k" path="res://assets/bgm/atw_mind_palace.ogg" id="33_pkkep"]
 [ext_resource type="PackedScene" uid="uid://dtn216ljo4jav" path="res://assets/meshes/scenery/conicalbasket.tscn" id="34_gnvvn"]
 [ext_resource type="Texture2D" uid="uid://bdt0rsbvrllmi" path="res://assets/textures/actors/skirt_guy_1.png" id="35_3xsiw"]
 [ext_resource type="Resource" path="res://dialog/timelines/phalanx.dtl" id="35_7kegq"]
@@ -68,11 +62,18 @@
 [ext_resource type="Texture2D" uid="uid://dwpnxp6rt4ihb" path="res://assets/textures/scenery/rugs/rug4.png" id="50_ay0bl"]
 [ext_resource type="PackedScene" uid="uid://cniojk4y01y7u" path="res://assets/meshes/scenery/tent_7.tscn" id="51_e8j5q"]
 [ext_resource type="PackedScene" uid="uid://dhlvxfqvdf3kv" path="res://scenes/actors/folks/banditkings.tscn" id="51_uqtre"]
+[ext_resource type="PackedScene" uid="uid://c51l11k8ib2rf" path="res://assets/meshes/scenery/palm.tscn" id="56_tx2ck"]
 [ext_resource type="PackedScene" uid="uid://dbiqhfyud4qha" path="res://assets/meshes/scenery/busbench.tscn" id="56_vasf6"]
 [ext_resource type="PackedScene" uid="uid://dbwi0nex6jy4v" path="res://scenes/actors/folks/busguy.tscn" id="57_mefxx"]
 [ext_resource type="Resource" path="res://dialog/timelines/busguy.dtl" id="58_cos4w"]
 [ext_resource type="Texture2D" uid="uid://whjf4xl5o0we" path="res://assets/textures/scenery/busstopsign.png" id="59_2ypv6"]
+[ext_resource type="PackedScene" uid="uid://bqbi11mefc7e8" path="res://scenes/terrain/pinetree.tscn" id="61_whfgh"]
+[ext_resource type="PackedScene" uid="uid://jprh316685ds" path="res://scenes/actors/folks/dogwalker.tscn" id="65_aooxg"]
+[ext_resource type="Texture2D" uid="uid://ct3gknj8rtnbs" path="res://assets/textures/actors/the_birdman.png" id="68_43sam"]
 [ext_resource type="PackedScene" uid="uid://tohqvim1j36w" path="res://assets/meshes/scenery/mug.tscn" id="68_gxd6l"]
+[ext_resource type="Terrain3DStorage" uid="uid://cpgjwx0ormfo1" path="res://scenes/terrain/world_terrain3dstore.tres" id="69_tc8cy"]
+[ext_resource type="Terrain3DTextureList" uid="uid://cpgi5wftm0kym" path="res://scenes/terrain/world_terraintexlist.tres" id="70_uf6vp"]
+[ext_resource type="PackedScene" uid="uid://cy4fa0k5hj5uu" path="res://scenes/terrain/river.tscn" id="71_f0g13"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gqfqt"]
 size = Vector3(21.1647, 16.0104, 23.5148)
@@ -125,169 +126,9 @@ shadow_mesh = SubResource("ArrayMesh_bbex2")
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2p6u"]
 size = Vector3(0.242013, 1, 0.26068)
 
-[sub_resource type="Animation" id="Animation_dwjra"]
-resource_name = "BGM2Cavern"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CavernBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.143587, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_u1jt3"]
-resource_name = "BGM2Palace"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PalaceBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.138696, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_62670"]
-resource_name = "Cavern2BGM"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.183011, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CavernBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-
-[sub_resource type="Animation" id="Animation_q5ipm"]
-resource_name = "Palace2BGM"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(0.148651, 1),
-"update": 0,
-"values": [-80.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PalaceBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(5.85634, 1),
-"update": 0,
-"values": [0.0, -80.0]
-}
-
-[sub_resource type="Animation" id="Animation_mfj6a"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CavernBGM:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-80.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PalaceBGM:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-80.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mstnp"]
-_data = {
-"BGM2Cavern": SubResource("Animation_dwjra"),
-"BGM2Palace": SubResource("Animation_u1jt3"),
-"Cavern2BGM": SubResource("Animation_62670"),
-"Palace2BGM": SubResource("Animation_q5ipm"),
-"RESET": SubResource("Animation_mfj6a")
-}
-
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 512, 0, 512)
-script = ExtResource("1_16cwp")
+script = ExtResource("1_hsf1x")
 
 [node name="BakedLightmap" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.89038)
@@ -299,6 +140,14 @@ light_data = ExtResource("3_lv2qp")
 [node name="Player" parent="." instance=ExtResource("1_gjtjx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.9586, 14.1083, -27.0468)
 floor_max_angle = 1.0472
+
+[node name="Terrain" type="Terrain3D" parent="."]
+storage = ExtResource("69_tc8cy")
+texture_list = ExtResource("70_uf6vp")
+
+[node name="Firmament" parent="." instance=ExtResource("6_alg0o")]
+
+[node name="River" parent="." instance=ExtResource("71_f0g13")]
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -313,6 +162,14 @@ directional_shadow_pancake_size = 0.0
 
 [node name="Environment" type="WorldEnvironment" parent="Lighting"]
 environment = ExtResource("4_1vrg3")
+
+[node name="Music" type="Node" parent="."]
+
+[node name="CrossFade" type="AnimationPlayer" parent="Music"]
+
+[node name="bgm_market_square" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("9_wnjab")
+autoplay = true
 
 [node name="Places" type="Node3D" parent="."]
 
@@ -566,6 +423,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.1403, 13.0576, -4.79578)
 [node name="CourtyardWallsUpper" parent="Places/Courtyard/Scenery/Walls" instance=ExtResource("24_ftlrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.195, 0)
 
+[node name="Palms" type="Node3D" parent="Places/Courtyard/Scenery"]
+
+[node name="Palm" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0398677, 0, -0.458269, 0, 0.46, 0, 0.458269, 0, 0.0398677, -59.6816, 13.127, 24.3539)
+
+[node name="Palm2" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.462807, 0, -0.306325, 0, 0.555, 0, 0.306325, 0, 0.462807, -69.1165, 13.127, 24.8043)
+
+[node name="Palm3" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.200222, 0, 0.447226, 0, 0.49, 0, -0.447226, 0, 0.200222, -78.4478, 13.127, 23.4691)
+
+[node name="Palm4" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.296324, 0, -0.49859, 0, 0.58, 0, 0.49859, 0, 0.296324, -86.271, 13.127, 22.5474)
+
+[node name="Palm5" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.0927477, 0, 0.61808, 0, 0.625, 0, -0.61808, 0, 0.0927477, -94.42, 13.127, 22.9579)
+
+[node name="Palm6" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.231756, 0, -0.443045, 0, 0.5, 0, 0.443045, 0, 0.231756, -103.947, 13.127, 24.9666)
+
+[node name="Palm7" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.337125, 0, -0.369251, 0, 0.5, 0, 0.369251, 0, 0.337125, -104.825, 13.127, 10.5571)
+
+[node name="Palm8" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.0867631, 0, 0.451743, 0, 0.46, 0, -0.451743, 0, -0.0867631, -96.2583, 13.127, 8.00293)
+
+[node name="Palm9" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.439514, 0, -0.401064, 0, 0.595, 0, 0.401064, 0, 0.439514, -87.38, 13.127, 8.86023)
+
+[node name="Palm10" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.135054, 0, -0.471021, 0, 0.49, 0, 0.471021, 0, -0.135054, -77.5406, 13.127, 10.4911)
+
+[node name="Palm11" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(-0.559747, 0, -0.151933, 0, 0.58, 0, 0.151933, 0, -0.559747, -67.8014, 13.127, 10.2532)
+
+[node name="Palm12" parent="Places/Courtyard/Scenery/Palms" instance=ExtResource("56_tx2ck")]
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, -59.2232, 13.127, 10.0037)
+
+[node name="mug" parent="Places/Courtyard/Scenery" instance=ExtResource("68_gxd6l")]
+transform = Transform3D(-0.095424, 0, 0.0299041, 0, 0.1, 0, -0.0299041, 0, -0.095424, -56.2843, 14.2655, 7.3703)
+
 [node name="MusicFades" type="Node3D" parent="Places/Courtyard"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -446.86, -13.0576, -507.204)
 
@@ -814,7 +712,7 @@ transform = Transform3D(4.595, 0, 0, 0, 4.595, 0, 0, 0, 4.595, 263.228, 54.6234,
 visibility_range_end = 389.62
 modulate = Color(0.752941, 0.905882, 0.752941, 1)
 shaded = false
-texture = ExtResource("59_sr2vc")
+texture = ExtResource("68_43sam")
 
 [node name="swamp" type="Node3D" parent="Places"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8376, 0, -234.229)
@@ -1045,9 +943,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.5074, 24.8075, 276.646)
 
 [node name="Pinetree6" parent="Places/swamp/Planst" instance=ExtResource("61_whfgh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.235, 22.6222, 153.548)
-=======
+
 [node name="BusStop" type="Node3D" parent="Places"]
-transform = Transform3D(0.748597, 0, 0.663025, 0, 1, 0, -0.663025, 0, 0.748597, -246.888, 13.9558, -380.768)
+transform = Transform3D(0.60042, 0, 0.799685, 0, 1, 0, -0.799685, 0, 0.60042, -267.326, 9.87851, -359.365)
 
 [node name="busbench" parent="Places/BusStop" instance=ExtResource("56_vasf6")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0.350237, 1.07648)
@@ -1063,80 +961,47 @@ shaded = false
 dialog_timeline = ExtResource("58_cos4w")
 
 [node name="sign" type="Sprite3D" parent="Places/BusStop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14862, 2.65051, 1.11868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14859, 2.24059, 1.11862)
 modulate = Color(0.827451, 0.721569, 0.682353, 1)
 pixel_size = 0.005
 texture = ExtResource("59_2ypv6")
 
-[node name="courtyard_house" parent="." instance=ExtResource("36_7fhuh")]
+[node name="PathHouse" type="Node3D" parent="Places"]
+
+[node name="courtyard_house" parent="Places/PathHouse" instance=ExtResource("36_7fhuh")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -29.807, 25.3829, -384.779)
 
-[node name="tent" parent="." instance=ExtResource("51_e8j5q")]
+[node name="tent" parent="Places/PathHouse" instance=ExtResource("51_e8j5q")]
 transform = Transform3D(0.321028, -0.0407199, -0.179396, 0.0365947, 0.367746, -0.0179864, 0.180283, -0.00213733, 0.3231, -59.6214, 25.1198, -377.724)
 
-[node name="tent2" parent="." instance=ExtResource("46_x5jnw")]
+[node name="tent2" parent="Places/PathHouse" instance=ExtResource("46_x5jnw")]
 transform = Transform3D(-0.208257, 0.0166473, -0.208271, 0.0246723, 0.293964, -0.00117383, 0.207474, -0.0182474, -0.208918, -52.2755, 25.7577, -376.801)
 
-[node name="Palm16" parent="." instance=ExtResource("56_tx2ck")]
+[node name="Palm16" parent="Places/PathHouse" instance=ExtResource("56_tx2ck")]
 transform = Transform3D(1.09, 0, 0, 0, 1.09, 0, 0, 0, 1.09, -56.4353, 22.9272, -386.981)
 
-[node name="courtyard_house2" parent="." instance=ExtResource("36_7fhuh")]
+[node name="HillsHouse" type="Node3D" parent="Places"]
+
+[node name="courtyard_house2" parent="Places/HillsHouse" instance=ExtResource("36_7fhuh")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 249.946, 16.9769, -268.176)
 
-[node name="tent3" parent="." instance=ExtResource("41_660b7")]
+[node name="tent3" parent="Places/HillsHouse" instance=ExtResource("41_660b7")]
 transform = Transform3D(-0.367197, 0, -0.251378, 0, 0.445, 0, 0.251378, 0, -0.367197, 275.73, 15.416, -244.252)
 
-[node name="tent4" parent="." instance=ExtResource("47_cm63g")]
+[node name="tent4" parent="Places/HillsHouse" instance=ExtResource("47_cm63g")]
 transform = Transform3D(-0.424998, 0, 0.00141673, 0, 0.425, 0, -0.00141673, 0, -0.424998, 281.008, 15.7502, -226.815)
 
-[node name="brazier" parent="." instance=ExtResource("13_oe6pc")]
+[node name="brazier" parent="Places/HillsHouse" instance=ExtResource("13_oe6pc")]
 transform = Transform3D(0.62, 0, 0, 0, 0.62, 0, 0, 0, 0.62, 266.156, 10.7295, -242.706)
 
-[node name="conicalbasket" parent="." instance=ExtResource("34_gnvvn")]
+[node name="conicalbasket" parent="Places/HillsHouse" instance=ExtResource("34_gnvvn")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 270.687, 15.5878, -242.795)
 
-[node name="OilLamp" parent="." instance=ExtResource("32_1k6al")]
+[node name="OilLamp" parent="Places/HillsHouse" instance=ExtResource("32_1k6al")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 247.482, 23.1197, -258.852)
 
-[node name="Palm" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.0398677, 0, -0.458269, 0, 0.46, 0, 0.458269, 0, 0.0398677, 4.33173, 13.127, 21.2666)
+[node name="Dogwalker" type="Node3D" parent="Places"]
 
-[node name="Palm2" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.462807, 0, -0.306325, 0, 0.555, 0, 0.306325, 0, 0.462807, -5.10312, 13.127, 21.7169)
-
-[node name="Palm3" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.200222, 0, 0.447226, 0, 0.49, 0, -0.447226, 0, 0.200222, -14.4344, 13.127, 20.3817)
-
-[node name="Palm4" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.296324, 0, -0.49859, 0, 0.58, 0, 0.49859, 0, 0.296324, -22.2576, 13.127, 19.46)
-
-[node name="Palm5" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.0927477, 0, 0.61808, 0, 0.625, 0, -0.61808, 0, 0.0927477, -30.4066, 13.127, 19.8706)
-
-[node name="Palm6" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.231756, 0, -0.443045, 0, 0.5, 0, 0.443045, 0, 0.231756, -39.9333, 13.127, 21.8792)
-
-[node name="Palm7" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.337125, 0, -0.369251, 0, 0.5, 0, 0.369251, 0, 0.337125, -40.8118, 13.127, 7.46979)
-
-[node name="Palm8" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(-0.0867631, 0, 0.451743, 0, 0.46, 0, -0.451743, 0, -0.0867631, -32.2449, 13.127, 4.91559)
-
-[node name="Palm9" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.439514, 0, -0.401064, 0, 0.595, 0, 0.401064, 0, 0.439514, -23.3666, 13.127, 5.77289)
-
-[node name="Palm10" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(-0.135054, 0, -0.471021, 0, 0.49, 0, 0.471021, 0, -0.135054, -13.5272, 13.127, 7.40381)
-
-[node name="Palm11" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(-0.559747, 0, -0.151933, 0, 0.58, 0, 0.151933, 0, -0.559747, -3.78799, 13.127, 7.16583)
-
-[node name="Palm12" parent="." instance=ExtResource("56_tx2ck")]
-transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 4.79016, 13.127, 6.91638)
-
-[node name="dogwalker" parent="." instance=ExtResource("65_aooxg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.648, 10.2031, -318.455)
+[node name="dogwalker" parent="Places/Dogwalker" instance=ExtResource("65_aooxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.648, 6.39546, -318.455)
 modulate = Color(0.54902, 0.415686, 0.333333, 1)
-
-[node name="mug" parent="." instance=ExtResource("68_gxd6l")]
-transform = Transform3D(-0.095424, 0, 0.0299041, 0, 0.1, 0, -0.0299041, 0, -0.095424, 7.72906, 14.2655, 4.28296)

@@ -5,9 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_fjbt5")
-shader_parameter/WATER_COL = Vector4(0.094, 0.168, 0.29, 1)
-shader_parameter/WATER2_COL = Vector4(0.137, 0.157, 0.188, 1)
-shader_parameter/FOAM_COL = Vector4(0.184, 0.235, 0.322, 1)
+shader_parameter/WATER_COL = Vector4(0.04, 0.38, 0.8, 0.5)
+shader_parameter/WATER2_COL = Vector4(0.04, 0.35, 0.78, 0.5)
+shader_parameter/FOAM_COL = Vector4(0.8125, 0.9609, 0.9648, 0.5)
 shader_parameter/distortion_speed = 1.0
 shader_parameter/tile = Vector2(600, 250)
 shader_parameter/height = 0.0
