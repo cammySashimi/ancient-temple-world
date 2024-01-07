@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" path="res://assets/textures/floors/sand.dds" id="2_igf8i"]
 [ext_resource type="Texture2D" path="res://assets/textures/floors/path.dds" id="3_vd2sj"]
 [ext_resource type="Texture2D" path="res://assets/textures/floors/path_nomal.dds" id="4_tvn6q"]
-[ext_resource type="Texture2D" path="res://assets/textures/floors/grass.dds" id="5_xldwa"]
+[ext_resource type="Texture2D" path="res://assets/textures/floors/floor_scrub.dds" id="5_i831v"]
 
 [sub_resource type="Terrain3DTexture" id="Terrain3DTexture_oddys"]
 albedo_texture = ExtResource("1_uog07")
@@ -54,6 +54,7 @@ texture_id = 3
 albedo_texture = ExtResource("5_xldwa")
 normal_texture = SubResource("ImageTexture_ifktu")
 uv_scale = 1.0
+uv_rotation = 0.438
 
 [resource]
 textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_oddys"), SubResource("Terrain3DTexture_d1x4a"), SubResource("Terrain3DTexture_dhhqa"), SubResource("Terrain3DTexture_nvwqj")])
