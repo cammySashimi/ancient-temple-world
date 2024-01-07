@@ -11,23 +11,30 @@ points = PackedVector3Array(2.83981, 1.25455, 0.00111866, 2.7603, 1.34214, 0.001
 
 [node name="watermelon_6" parent="." index="0"]
 material_override = ExtResource("2_578jr")
+visibility_range_end = 100.0
 
 [node name="watermelon_5" parent="." index="1"]
 material_override = ExtResource("2_578jr")
+visibility_range_end = 100.0
 
 [node name="watermelon_4" parent="." index="2"]
 material_override = ExtResource("2_578jr")
+visibility_range_end = 100.0
 
 [node name="watermelon_3" parent="." index="3"]
 material_override = ExtResource("2_578jr")
+visibility_range_end = 100.0
 
 [node name="watermelon_2" parent="." index="4"]
 material_override = ExtResource("2_578jr")
+visibility_range_end = 100.0
 
 [node name="watermelon_1" parent="." index="5"]
+visibility_range_end = 100.0
 surface_material_override/0 = ExtResource("2_578jr")
 
 [node name="open basket" parent="." index="6"]
+visibility_range_end = 100.0
 surface_material_override/0 = ExtResource("2_d0bci")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="open basket" index="0"]

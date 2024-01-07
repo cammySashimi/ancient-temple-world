@@ -44,6 +44,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var home_position = position
 
+@onready var player_rid = self.get_rid()
+
 func _ready():
 	# Capture mouse for first-person camera
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -157,8 +159,10 @@ func _get_pointed():
 	var space = get_world_3d().direct_space_state
 	var camera_pos = camera.global_position
 	var camera_trans = camera.global_transform
-	
-	var query = PhysicsRayQueryParameters3D.create(camera_pos, camera_pos - camera_trans.basis.z * interact_distance)
+
+	var rids = [player_rid]
+	var query = PhysicsRayQueryParameters3D.create(camera_pos, camera_pos - camera_trans.basis.z * interact_distance, 1, rids)
+
 	var collision = space.intersect_ray(query)
 	if collision:
 		return collision
@@ -173,7 +177,8 @@ func _get_clicked():
 	
 	interacting_with = null
 	
-	var query = PhysicsRayQueryParameters3D.create(camera_pos, camera_pos - camera_trans.basis.z * interact_distance)
+	var rids = [player_rid]
+	var query = PhysicsRayQueryParameters3D.create(camera_pos, camera_pos - camera_trans.basis.z * interact_distance, 1, rids)
 	var collision = space.intersect_ray(query)
 	if collision:
 		# Get parent node of what we clicked (scripts stored in sprite or model rather than area3d)

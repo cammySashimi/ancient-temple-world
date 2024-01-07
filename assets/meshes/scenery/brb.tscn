@@ -14,6 +14,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="bevel_rim_bowl" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_yibk3")
+visibility_range_end = 100.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bevel_rim_bowl" index="0"]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxsno1g83h4re"]
+
+[ext_resource type="PackedScene" uid="uid://bgv280buftilt" path="res://assets/meshes/import/scenery/hanginglamp.glb" id="1_6okdn"]
+[ext_resource type="Texture2D" uid="uid://dd3eb54i8p3qk" path="res://assets/textures/scenery/hanginglamp_chain_texture.png" id="2_hykdt"]
+[ext_resource type="Texture2D" uid="uid://bbwkvpj73b4ci" path="res://assets/textures/scenery/hanginglamp_lamp_texture.png" id="3_j3gph"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2j3m"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_hykdt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyht8"]
+albedo_texture = ExtResource("3_j3gph")
+
+[node name="hanginglamp" instance=ExtResource("1_6okdn")]
+
+[node name="Chain" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g2j3m")
+
+[node name="Lamp" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_qyht8")

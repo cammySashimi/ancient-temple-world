@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtn216ljo4jav"]
 
 [ext_resource type="PackedScene" uid="uid://csbuky53s4qmx" path="res://assets/meshes/import/scenery/conicalbasket.glb" id="1_12xuu"]
-[ext_resource type="Texture2D" uid="uid://d3svta4l1cxfr" path="res://assets/textures/scenery/conicalbasket_texture.png" id="2_21xfu"]
+[ext_resource type="Texture2D" uid="uid://dxe0qasmad3u8" path="res://assets/textures/scenery/woven.png" id="2_5jy3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xdw6"]
-albedo_texture = ExtResource("2_21xfu")
+albedo_texture = ExtResource("2_5jy3s")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r2ios"]
 points = PackedVector3Array(3.43962, 7.80166, 0.906636, -3.44336, 7.44526, -0.289023, -3.44195, 7.44383, 0.293695, 0.996642, 0.196577, -0.407199, 0.30458, 7.80856, -3.56171, -0.298614, 7.80243, 3.56085, -0.993955, 0.188654, -0.407388, -0.173328, 0.417855, 1.11712, 3.35105, 7.83884, -1.39727, -2.54295, 7.73087, -2.54295, -2.61519, 7.8384, 2.49831, 2.3382, 7.7753, 2.69729, -0.407388, 0.188653, -0.993955, 1.48167, 7.72931, -3.25147, 0.867211, 0.249939, 0.636016, -0.993475, 0.19046, 0.411982, 1.40125, 7.83463, 3.34673, -1.4786, 7.73372, -3.25526, 0.412591, 0.191077, -0.993311, 2.37374, 7.29601, -2.48454, -3.25513, 7.73278, -1.47824, -1.3981, 7.83917, 3.35063, -3.25134, 7.72837, 1.48131, 3.47422, 7.47177, 0.178434, 3.34715, 7.8343, 1.40043, 0.411822, 0.198111, 0.996235, -0.632683, 0.245334, 0.867623, 0.996235, 0.198111, 0.411822, -3.56156, 7.80763, 0.30381, 0.178485, 7.4728, 3.47456, -0.289108, 7.44627, -3.44368, 2.13868, 6.01951, 2.13802)
@@ -14,6 +14,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="conical_basket" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_3xdw6")
+visibility_range_end = 100.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

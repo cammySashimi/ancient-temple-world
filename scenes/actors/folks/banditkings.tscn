@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhlvxfqvdf3kv"]
+
+[ext_resource type="Texture2D" uid="uid://copo805puhhe2" path="res://assets/textures/actors/bandit_3n4.png" id="1_yffie"]
+[ext_resource type="Script" path="res://scripts/talkable.gd" id="2_ljsdf"]
+[ext_resource type="Resource" path="res://dialog/timelines/banditkings.dtl" id="3_xe0yj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pl5g5"]
+height = 1.72046
+
+[node name="BanditKings" type="Sprite3D"]
+visibility_range_end = 100.0
+modulate = Color(0.937255, 0.839216, 0.662745, 1)
+pixel_size = 0.0035
+billboard = 2
+texture = ExtResource("1_yffie")
+script = ExtResource("2_ljsdf")
+dialog_timeline = ExtResource("3_xe0yj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_pl5g5")
